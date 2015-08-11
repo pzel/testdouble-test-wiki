@@ -1,1 +1,1 @@
-Welcome to the contributing-tests wiki!
+This wiki presents some notes on testing.
