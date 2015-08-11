@@ -1,8 +1,3 @@
-<style>
-.repository-with-sidebar .repository-content { width: 2000px; }
-</style>
-
-
 |         | Monday | Tuesday | Wednesday | Thursday | Friday |
 | ------  | ------ | ------- | --------- | -------- | ------ |
 | 9:00AM  | Intro  |  Intro  |   Intro   |  Intro   | Intro  |   
