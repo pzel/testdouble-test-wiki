@@ -2,11 +2,11 @@
 
 There are several sub-types of test doubles, but because most tools do a poor job either following a conventional nomenclature or providing test double utilities that adhere to only one sub-type, it's more useful to think of the various types of test doubles as various _intentional behaviors_ that test doubles may exhibit. These include:
 
-* Stubs
-* Fakes
-* Mocks
-* Partial Mocks and Proxies
-* Spies
+* [[Stubs]]
+* [[Fakes]]
+* [[Mocks]]
+* [[Partial Mocks and Proxies]]
+* [[Spies]]
 
 The usage of test doubles tends to be convoluted and confused in practice because of the lack of popular understanding between [[Detroit-school TDD]] and [[London-school TDD]].
 
