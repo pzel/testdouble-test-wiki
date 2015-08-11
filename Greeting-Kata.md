@@ -29,3 +29,11 @@ Handle arbitrarily names of input. When `name` represents more than two names, s
 ## Requirement 6
 
 Allow mixing of normal and shouted names by separating the response into two greetings. For example, when `name` is `["Amy", "BRIAN", "Charlotte"]`, then the method should return the string `"Hello, Amy and Charlotte. AND HELLO BRIAN!"`
+
+## Requirement 7
+
+If any entries in `name` are a string containing a comma, split it as its own input. For example, when `name` is ["Bob", "Charlie, Dianne"], then the method should return the string `"Hello, Bob, Charlie, and Dianne"`.
+
+## Requirement 8
+
+Allow the input to escape intentional commas introduced by Requirement 7. These can be escaped in the same manner that CSV is, with double quotes surrounding the entry. For example, For example, when `name` is ["Bob", "\"Charlie, Dianne\""], then the method should return the string `"Hello, Bob and Charlie, Dianne"`.
