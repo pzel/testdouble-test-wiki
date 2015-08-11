@@ -1,4 +1,4 @@
-For this exercise, we'll attempt to use JUnit to test-drive the [[Greet Kata]] to get a feel for what an expressive test looks like in JUnit. 
+For this exercise, we'll attempt to use JUnit to test-drive the [[Greeting Kata]] to get a feel for what an expressive test looks like in JUnit. 
 
 In this activity, we'll:
 
