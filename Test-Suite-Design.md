@@ -1,6 +1,6 @@
 Often overlooked—because it's simpler for teachers and tools to lock us into a single test suite or a fixed set of test suites—is that application teams have the freedom and capability to design arbitrarily many test suites of their application.
 
-Most teams that aren't happy with their tests report a lack of:
+Most teams that aren't happy with their tests typically report a lack of:
 
 * Focus on what the purpose of each test is
 * Consistency in structure and approach between tests
@@ -24,3 +24,7 @@ Ideally, each test suite should define the following traits:
 * The maximum permissible elapsed time for a run of an individual test or for the full suite 
 
 As with anything, there is such a thing as too much of a good thing. [[Redundant coverage]] is an obvious and ever-present risk to multiple test suites that cover the same code; even when that risk is well addressed, the cost of determining whether the blended coverage of the overall application is complete is made more difficult.
+
+## References
+
+* [Breaking up with your test suite](http://blog.testdouble.com/posts/2014-05-25-breaking-up-with-your-test-suite.html) (a presentation on creating suites to achieve focused design & regression goals)
