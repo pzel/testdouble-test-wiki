@@ -12,4 +12,4 @@ If a test build is very slow, then a developer might look into why it's slow. So
 
 If a build is slow, it's only natural that most developers will compensate by decreasing the frequency with which they run the tests. If a build takes less than a second, it's trivial to run constantly upon every minor change. Meanwhile, a build takes more than a minute to run, well, there are only 480 minutes in the ideal 8-hour work day, and to run the build for every single change would place an upper bound on the number of decisions a developer can make to 480 per day.
 
-Generally, as test suites get slower, they are run less frequently, and developers tackle larger, more speculative units of work without the benefit of feedback, and risking greater amounts of waste per feedback loop.
+As test suites become slower, they are run less frequently, and developers will tackle larger, more speculative units of work without the benefit of feedback, risking greater and greater amounts of waste per feedback loop.
