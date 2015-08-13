@@ -57,10 +57,10 @@ import static org.hamcrest.Matchers.*;
 public class ${primary_type_name} {
 
     ${testedType} subject = new ${testedType}();
-    ${cursor}
 
     @Test
     public void test() {
+      ${cursor}
     }
 }
 ```
@@ -97,3 +97,6 @@ public class ${primary_type_name} {
 }
 ```
 
+The above will require you to type `testedType` yourself, since there is no template variable for the [[subject]] type.
+
+When the depended-on types are defined on the subject, MoreUnit can automatically generate the `@Mock TypeName typeName;` declarations via its "Mock Dependencies in Test Case" (`[Ctrl]-[Alt]-[Shift]-M`) wizard.
