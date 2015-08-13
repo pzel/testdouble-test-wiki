@@ -14,6 +14,7 @@ There are numerous intended benefits of this approach, including:
 * Working in very small increments
 * Having the regression safety net of the previous tests when adding each requirement
 * Freedom to aggressively refactor the implementation, since (ideally) the tests will have very little coupling to implementation details
+* Resulting tests provide a complete (if highly redundant) regression test suite, if TDD is practiced universally
 
 ## Comparison to London-school TDD
 
@@ -36,7 +37,9 @@ This tension has resulted in advocates of Detroit-school TDD to exhort developer
 
 ### Minimizing Test Doubles
 
-Testing the [[subject]] under sufficiently realistic conditions is considered paramount to maximize the resulting tests' regression value, and as a result, use of [[test doubles|test double]] is seen as an affordance to be minimized, often by reworking the broader design to obviate them.
+Testing the [[subject]] under sufficiently realistic conditions is considered paramount to maximize the resulting tests' regression value, and as a result, use of [[test doubles|test double]] is seen as an affordance to be minimized, often by reworking the broader design to obviate them. 
+
+In fact, a surprisingly complex responsibility of Detroit-school TDD practitioners it to define what level of realism is acceptable for a test to be called a "unit test". Rules similar to the ones [published by Michael Feathers in 2005](http://www.artima.com/weblogs/viewpost.jsp?thread=126923) are common and often debated within teams as suites grow and become slower.
 
 ### Bottom-up development
 
