@@ -38,7 +38,7 @@ A common pattern to emerge when practicing Detroit-school TDD is that an author 
 
 In practice, emphasizing refactoring as a task to be completed _after_ arriving at a working implementation has so often become a point of contention for teams using TDD that it warrants valid criticism of the methodology. Typically, if a team is under pressure to deliver software quickly, and they have passing tests to indicate that their perhaps-not-very-well-factored solution does actually work, many teams choose to defer the task of refactoring to later. This action is popularly referred to as assuming "technical debt" (though that term's technical definition differs substantially).
 
-This tension has resulted in advocates of Detroit-school TDD to exhort developers to work more slowly and insist on refactoring before delivering otherwise working code. This line of argument has frequently led to claims that TDD's chief advocates are promoting dogma, because that message—as perceived by people for whom TDD hasn't worked well—is often perceived as a failure of them simply "not doing it hard enough".
+This tension has resulted in advocates of Detroit-school TDD to exhort developers to work more slowly and insist on refactoring before delivering otherwise working code. This line of argument has frequently led to claims that TDD's chief advocates are promoting dogma, because that message—as perceived by people for whom TDD hasn't worked well—is often perceived as a failure of them simply "not doing it hard enough". (The [No True Scotsman](https://en.wikipedia.org/wiki/No_true_Scotsman) fallacy.)
 
 [Aside: I documented a number of these concerns in [this blog post](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html).]
 
