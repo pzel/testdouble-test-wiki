@@ -1,6 +1,6 @@
 Redundant coverage is a testing anti-pattern which describes [code coverage](https://en.wikipedia.org/wiki/Code_coverage) the situation in which the behavior of a particular production code path is depended on by multiple tests.
 
-Redundant coverage is problematic because a single desired change in a given bit of production code might result in a need to change numerous tests, who would otherwise fail (and as a [[false negative]], at that). 
+Redundant coverage is problematic because a single desired change in a given bit of production code might result in a need to change numerous tests, who would otherwise fail (and as a [[false negative|negative analysis]], at that). 
 
 For instance, if a system has a unit `DeterminesAdulthood` which determines if a user is of majority age, and a later requirement changes the age of majority from 18 to 21, then any test which both exercises `DeterminesAdulthood` and cares about whether users are adults may be impacted by the change.
 
