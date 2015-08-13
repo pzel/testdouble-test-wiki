@@ -23,7 +23,7 @@ describe Foo
 end
 ```
 
-Where `subject` is an instantiation of whatever is under test. That instantiation can be customized by passing a block like `subject { Foo.new(1234) }`.
+Where `subject` is an instance of `Foo` created by RSpec automatically, as if the user had defined `let(:subject) { Foo.new }`. Note that the instantiation of `subject` can be customized by passing a block like `subject { Foo.new(1234) }`.
 
 ## Criticism
 
