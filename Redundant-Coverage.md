@@ -1,4 +1,4 @@
-Redundant coverage is a testing anti-pattern which describes the situation in which the behavior of a particular production code path is depended on by multiple tests. It's one (of several) examples in which [code coverage](https://en.wikipedia.org/wiki/Code_coverage) is not a universally good thing.
+Redundant coverage is a testing anti-pattern which describes the situation in which the behavior of a particular production code path is depended on by multiple tests. It's one (of several) examples in which greater [code coverage](https://en.wikipedia.org/wiki/Code_coverage) is not a universally good thing.
 
 Redundant coverage is problematic because a single desired change in a given bit of production code might result in a need to change numerous tests, who would otherwise fail (and as a [[false negative|test failure analysis]], at that). 
 
