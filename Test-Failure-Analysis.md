@@ -1,0 +1,17 @@
+Whenever a test execution fails, the first step in responding to the failure is analyzing the nature of the failure. Every failure can be described as either a "true negative" or a "false negative". In summary:
+
+* True negative: the test failure indicated a bug in the production code and the corrective action requires a change to the production code.
+* False negative: the test failure indicated that the test was out-of-step with the expected behavior of the production code and the corrective action requires a change to a test.
+
+Each occurrence of a false negative erodes the perceived usefulness of a given test suite. If the majority of test failures that developers encounter (outside a normal TDD productivity workflow) simply indicate that tests are out-of-date and need to be updated, then a failing build will be seem less meaningful and testing will come to be seen as a chore. For teams with very robust test suites, it's not uncommon for true negatives to be exceedingly rare in comparison to false negatives. This is especially true of test suites that aren't designed to mitigate [[redundant coverage]].
+
+Often, analyzing whether a failure was a true or false negative is the most time-intensive step of fixing a broken test. Moreover, the analysis cost tends to increase with the test's degree of integrated-ness, because the causal relationship between the test and the production change that triggered the failure is certain to be less direct. Unfortunately, false negatives tend to be much more common in integration tests than unit tests, because most developers will know to update a [[symmetrical unit test]] at the time the change was made.
+
+To illustrate this analysis cost, consider a system that calculates Mortgage amortization schedules. Naturally, integration test suite will probably be driven by numerous real-world examples of known inputs and expected schedules. Suppose that a developer uncovers that the system is rounding values too early in the calculation, and one would imagine that they're likely to change the affected unit and its test and push the fix. Next, the build breaks and roughly half of the related integration tests are red. Which tests are red because their expectations were generated using the faulty rounding logic? Which tests might indicate an actual problem with the change? For important financial calculations, this analysis alone can literally take weeks of effort.
+
+## Test _Success_ Analysis
+
+Less worthy of lengthy discussion is "true positive" and "false positive" analysis, since developers rarely spend much time studying why passing tests succeed, but it's worth noting that "false positives" (that is, a test which passes but when the code doesn't actually exhibit the behavior the developer thinks it does) are a common problem in their own right. Jim Weirich called these "[fantasy tests](https://twitter.com/jimweirich/status/2932329208)", and they're especially common when a test exhibits:
+
+* Liberal, undisciplined use of [[test doubles|test double]] in a [[Detroit-school|Detroit-school TDD]] test, such that actual instances of the [[subject]] won't behave as they do when placed under test
+* Generated test cases (e.g. when tests are defined in the body of a loop over an array or hash of test data) which, ironically, rarely test the generation logic itself (this is very common in JavaScript tests because of a [common gotcha in `var` scoping and loops](http://alandix.com/blog/2014/08/07/javascript-gotcha-var-scope/))
