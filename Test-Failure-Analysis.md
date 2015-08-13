@@ -1,7 +1,7 @@
 Whenever a test execution fails, the first step in responding to the failure is analyzing the nature of the failure. Every failure can be described as either a "true negative" or a "false negative". In summary:
 
-* True negative: the test failure indicated a bug in the production code and the corrective action requires a change to the production code.
-* False negative: the test failure indicated that the test was out-of-step with the expected behavior of the production code and the corrective action requires a change to a test.
+* **True Negative** the test failure indicated a bug in the production code and the corrective action requires a change to the production code.
+* **False Negative** the test failure indicated that the test was out-of-step with the expected behavior of the production code and the corrective action requires a change to a test.
 
 Each occurrence of a false negative erodes the perceived usefulness of a given test suite. If the majority of test failures that developers encounter (outside a normal TDD productivity workflow) simply indicate that tests are out-of-date and need to be updated, then a failing build will be seem less meaningful and testing will come to be seen as a chore. For teams with very robust test suites, it's not uncommon for true negatives to be exceedingly rare in comparison to false negatives. This is especially true of test suites that aren't designed to mitigate [[redundant coverage]].
 
