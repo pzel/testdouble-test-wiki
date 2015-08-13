@@ -7,7 +7,12 @@ Some folks call it "Classical", "Traditional", or merely "TDD" because it laid t
 
 ## What is it?
 
-In Detroit-school TDD, a public API is first identified by writing a test against it, then each successive test is written as an example of its use, which drives out additional requirements. 
+In Detroit-school TDD, a public API is first identified by writing a test against it, then each successive test is written as an example of its use, which drives out additional requirements. At its most simple, its workflow is:
+
+1. Write a failing test
+2. Change the implementation to make it pass (or change the message)
+3. Refactor
+4. Go to Step 1
 
 There are numerous intended benefits of this approach, including:
 
@@ -31,7 +36,7 @@ A common pattern to emerge when practicing Detroit-school TDD is that an author 
 * "At what point are my implementation's private methods sufficiently complex that it warrants the creation of a separately-tested public API?"
 * "What degree of redundant test coverage between the original public API and any subsequently-extracted public APIs is acceptable? Should related examples be culled or should the newly-extracted API be replaced by a [[test double]]?"
 
-In practice, emphasizing refactoring as a task to be completed _after_ arriving at a working implementation has resulted in a point of contention for teams using TDD often enough that it warrants valid criticism of the methodology. Typically, if a team is under pressure to deliver software quickly, and they have passing tests to  indicate that their perhaps-not-very-well-factored solution does actually work, many teams choose to defer the task of aggressive refactoring. This action is popularly referred to as assuming "technical debt" (though that term's technical definition differs substantially).
+In practice, emphasizing refactoring as a task to be completed _after_ arriving at a working implementation has so often become a point of contention for teams using TDD that it warrants valid criticism of the methodology. Typically, if a team is under pressure to deliver software quickly, and they have passing tests to indicate that their perhaps-not-very-well-factored solution does actually work, many teams choose to defer the task of refactoring to later. This action is popularly referred to as assuming "technical debt" (though that term's technical definition differs substantially).
 
 This tension has resulted in advocates of Detroit-school TDD to exhort developers to work more slowly and insist on refactoring working solutions before delivering otherwise working code. This line of argument has frequently led to claims that TDD advocates are promoting dogma, where if the methodology doesn't work for someone they're clearly just "not doing it hard enough".
 
