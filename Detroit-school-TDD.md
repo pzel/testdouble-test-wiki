@@ -7,19 +7,32 @@ Some folks call it "Classical", "Traditional", or merely "TDD" because it laid t
 
 ## What is it?
 
-A few things distinguish Detroit-school TDD from its contemporary [[London-school|London-school TDD]]
+In Detroit-school TDD, a public API is first identified by writing a test against it, then each successive test is written as an example of its use, which drives out additional requirements. 
 
-In Detroit-school TDD, a public API is first identified by writing a test against it, then each successive test is written as an examples of its use, which drives out additional requirements.  dee There are numerous intended benefits of this approach, including:
+There are numerous intended benefits of this approach, including:
 
 * Working in very small increments
-* Having a regression safety net of the previous tests when implementing each requirement
-* Freedom to aggressively refactor all the code
+* Having the regression safety net of the previous tests when adding each requirement
+* Freedom to aggressively refactor the implementation, since (ideally) the tests will have very little coupling to implementation details
 
+## Comparison to London-school TDD
+
+A few things distinguish Detroit-school TDD from its chief contemporary, [[London-school|London-school TDD]].
 
 ### Emphasis on Refactoring
 
-The "Red-Green-Refactor" workflow in Detroit-school TDD necessitates a heavy refactor step, because the [[design pressure]] placed on the [[subject]] by its tests are limited to its public API. 
-* Bottom up
+The "Red-Green-Refactor" workflow in Detroit-school TDD necessitates a heavy refactor step, because the [[design pressure]] placed on the [[subject]] by its tests are limited to its public API. As a result, the tests tend to have little direct influence on the structure of the production code. The consideration of attributes of each unit (e.g. its size, dependencies, and [purity](https://en.wikipedia.org/wiki/Pure_function)) is almost entirely left up to the diligence of the developer.
+
+A common pattern to emerge when practicing Detroit-school TDD is that an author will write some number of examples against a single public API, which in turn necessitates the creation of numerous private methods, which leads to relatively large and unwieldy units. This places all the design pressure on the author to answer for themselves questions like:
+
+* "I have a large unit, what proper Design Patterns™ can I refactor this into?" ([Blank-slate syndrome](http://blog.codinghorror.com/avoiding-blank-page-syndrome/))
+* "How many test examples are enough for the unit at this level of granularity?"
+* "At what point are my implementation's private methods sufficiently complex that it warrants the creation of a separately-tested public API?"
+* "What degree of redundant test coverage between the original public API and any subsequently-extracted public APIs is acceptable? Should related examples be culled or should the newly-extracted API be replaced by a [[test double]]?"
+
+In practice, emphasizing refactoring as a task to be completed _after_ arriving at a working implementation has resulted in a point of contention for teams using TDD often enough that it warrants valid criticism of the methodology. Typically, if a team is under pressure to deliver software quickly, and they have passing tests to  indicate that their perhaps-not-very-well-factored solution does actually work, many teams choose to defer the task of aggressive refactoring. This action is popularly referred to as assuming "technical debt" (though that term's technical definition differs substantially).
+
+This tension has resulted in advocates of Detroit-school TDD to exhort developers to work more slowly and insist on refactoring working solutions before delivering otherwise working code. This line of argument has frequently led to claims that TDD advocates are promoting dogma, where if the methodology doesn't work for someone they're clearly just "not doing it hard enough".
 
 ### Minimizing Test Doubles
 
