@@ -1,1 +1,3 @@
 This wiki presents some notes on testing.
+
+Because the articles in this wiki constitute both explanation and advice, they will occasionally slip into first-person speech. At the present time, the only author is [Justin Searls](http://twitter.com/searls), so any references to "Me", "I", etc., refer to him. If down the road others contribute to this wiki, then first-person voice should be read as a consensus of their opinions unless otherwise noted.
