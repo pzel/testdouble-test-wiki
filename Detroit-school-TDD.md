@@ -35,6 +35,8 @@ In practice, emphasizing refactoring as a task to be completed _after_ arriving 
 
 This tension has resulted in advocates of Detroit-school TDD to exhort developers to work more slowly and insist on refactoring working solutions before delivering otherwise working code. This line of argument has frequently led to claims that TDD advocates are promoting dogma, where if the methodology doesn't work for someone they're clearly just "not doing it hard enough".
 
+[Aside: I documented a number of these concerns in [this blog post](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html).]
+
 ### Minimizing Test Doubles
 
 Testing the [[subject]] under sufficiently realistic conditions is considered paramount to maximize the resulting tests' regression value, and as a result, use of [[test doubles|test double]] is seen as an affordance to be minimized, often by reworking the broader design to obviate them. 
