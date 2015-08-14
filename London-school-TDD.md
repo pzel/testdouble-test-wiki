@@ -4,9 +4,26 @@ Have you read [GOOS](http://www.growing-object-oriented-software.com)? This is b
 
 This school of TDD was derived from years of practice in the Extreme Programming community in London. It describes an entirely different approach to test-driven development from its predecessor, the more prevalent [[Detroit-school|Detroit-school TDD]]. Many of the concepts were first published (to my knowledge) in a [paper at XP 2000](http://www.ccs.neu.edu/research/demeter/related-work/extreme-programming/MockObjectsFinal.PDF). 
 
-I can't speak for the GOOS's authors, [Nat Pryce](http://www.natpryce.com) and [Steve Freeman](http://higherorderlogic.com), so this article and other descriptions of "London" TDD only represent my derivative iterations on the concepts and themes they first published in their book.
+I can't speak for the GOOS's authors, [Nat Pryce](http://www.natpryce.com) and [Steve Freeman](http://higherorderlogic.com), so this article and other descriptions of "London" TDD only represent my derivative iterations on the concepts and themes they first published in their book. Furthermore, so that I'm not putting too many words in their mouths, my approach to London-school testing will be documented in [[Discovery Testing]].
 
 ## What is it?
+
+London-school TDD is an approach to using test-driven development to build systems that consistently arrive at clean, minimal designs of small, focused units of code. It shares many characteristics with [[Detroit-school TDD]], but differs significantly enough to warrant conceptualizing it as a separate methodology. Moreover, many terms and concepts familiar in [[Detroit-school|Detroit-school TDD]] are commonly overloaded when discussing London-school testing, which has been the source of endless confusion among developers.
+
+At its most basic, the workflow aims to systematically reduce a problem's complexity into small and sensible component parts from the outside-in:
+
+1. Identify the entry-point of the feature to-be-developed (e.g. an HTTP controller action), noting the inputs available and the desired output (or side effect)
+2. Create a test for a yet-unwritten domain object with a method-signature that would satisfy the top-level needs identified at the entry-point (the top-level domain object acts as [[scar tissue]] between the domain and the framework or runtime)
+3. Instead of attempting to immediately implement a solution, try to imagine 2-4 dependencies that could break the work up for the [[subject]] into logical sub-problems
+4. Create [[test doubles|test double]] for each of these dependencies and provide them to the [[subject]] (dependency injection is common here, but the approach varies by language ecosystem)
+5. Implement a test that specifies and enforces the appropriate interaction of the dependencies (often a chain of [[stubs||stub]] for each dependency, potentially [[mocking|mock]] or [[spying|spy]] the final one if the top-level desired behavior is a side-effect)
+6. Once the test passes, recurse by repeating steps 2-5 for each dependency; once a dependency's work can no longer be reasonably broken down, implement it as you would a pure function with [[Detroit-school TDD]]
+7. Once all of the dependencies specified in all of the tests have been implemented, invoke the initial top-level domain object from the entry-point and verify it works as intended
+
+A few consistent themes emerge from practicing this workflow:
+* A sense of surprise that everything works on the first attempt when it's finally invoked in production
+* Working outside-in to recurse through each dependency results in a easy-to-conceptualize tree of units for every feature
+* Minimizing the depth of the tree and maximizing the number of leaf nodes is desirable, because pure functions are easier to understand, test, and reuse
 
 ## Comparison to Detroit-school TDD
 
@@ -42,3 +59,8 @@ Any test of a unit that replaces dependencies with [[test doubles|test double]] 
 ### Outside-in
 
 (minimal implementations)
+
+
+### Wrapping third-party dependencies
+
+The phrase "don't mock what you don't own"
