@@ -13,7 +13,7 @@ In this activity, we'll:
 
 Even a simple test like this one can raise a lot of meaningful conversations. Some topics that may come up:
 
-* [[Arrange / Act / Assert]] 
+* [[Arrange-Act-Assert]] 
 * [[Necessary & Sufficient]] 
 * [[Meaningless Test Data]] 
 * [[One line => One action]] 
