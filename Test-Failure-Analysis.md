@@ -11,7 +11,7 @@ To illustrate this analysis cost, consider a system that calculates mortgage amo
 
 ## Test _Success_ Analysis
 
-Less worthy of lengthy discussion is "true positive" and "false positive" analysis, since developers rarely spend much time studying why passing tests succeed, but it's worth noting that "false positives" (that is, a test which passes but when the code doesn't actually exhibit the behavior the developer thinks it does) are a common problem in their own right. Jim Weirich called these "[fantasy tests](https://twitter.com/jimweirich/status/2932329208)", and they're especially common when a test exhibits:
+Less worthy of lengthy discussion is "true positive" and "false positive" analysis, since developers rarely spend much time studying why passing tests succeed, but it's worth noting that "false positives" (that is, a test which passes when the code doesn't actually exhibit the intended behavior) are a common problem in their own right. Jim Weirich called these "[fantasy tests](https://twitter.com/jimweirich/status/2932329208)", and they're especially common when a test exhibits:
 
 * Liberal, undisciplined use of [[test doubles|test double]] in a [[Detroit-school|Detroit-school TDD]] test, such that actual instances of the [[subject]] won't behave as they do when placed under test
 * Generated test cases (e.g. when tests are defined in the body of a loop over an array or hash of test data) which, ironically, rarely test the generation logic itself (this is very common in JavaScript tests because of a [common gotcha in `var` scoping and loops](http://alandix.com/blog/2014/08/07/javascript-gotcha-var-scope/))
