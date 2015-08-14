@@ -21,9 +21,11 @@ At its most basic, the workflow aims to systematically reduce a problem's comple
 7. Once all of the dependencies specified in all of the tests have been implemented, invoke the initial top-level domain object from the entry-point and verify it works as intended
 
 A few consistent themes emerge from practicing this workflow:
-* A sense of surprise that everything works on the first attempt when it's finally invoked in production
+* A [sense of surprise](http://michaelfeathers.typepad.com/michael_feathers_blog/2008/06/the-flawed-theo.html) that everything works on the first attempt when it's finally invoked in production
 * Working outside-in to recurse through each dependency results in a easy-to-conceptualize tree of units for every feature
 * Minimizing the depth of the tree and maximizing the number of leaf nodes is desirable, because pure functions are easier to understand, test, and reuse
+
+Because a London-school unit test suite only provides regression safety of each unit in isolation, it's typically necessary to have a second, minimal suite of [[SAFE tests|SAFE test]] that validates the system works when everything is wired up and integrated. It's that integrated test which buys the developers the luxury of writing tightly focused isolation tests of each unit.
 
 ## Comparison to Detroit-school TDD
 
