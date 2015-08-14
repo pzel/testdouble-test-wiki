@@ -18,10 +18,20 @@ An interesting consequence of practicing London-school TDD is that the design of
 
 The reason that London-school TDD can influence the design of the implementation is because unit tests have far more awareness of the [[subject]]'s dependencies and their interactions. In [[Detroit-school|Detroit-school TDD]], if an "object is hard to test, then it's hard to use"; in London-school, if a "dependency is hard to mock, then it's definitely hard to use for the object that'll actually be using it." Put differently, Detroit-school TDD can only provide feedback about how comfortable it is to use an API in the sometimes contrived circumstance of a unit test, whereas London-school TDD routinely provides feedback about whether each unit's usage is awkward under real-world conditions.
 
+(Note: separate article or inline for discussion of discovery testing trees and unit types??)
+
 * Collaborator
 * Signaler
 * Value
 * Logic (leaf-nodes)
+
+### Increased refactoring cost
+
+A common criticism of London-school test suites is that the cost to refactor implementations of a unit is increased. 
+
+While unit types whose tests don't use [[test doubles|test double]] (like Value and Logic units) are no different to refactor than Detroit-school units, types with mocked-out dependencies (like Collaborator and Signaler) require significantly more effort to refactor significantly. In general, attempting to refactor the implementation without changing the test first 
+
+Workflows derived from the London-school, like [[Discovery Testing]], compensate for this added cost by de-emphasizing refactoring; whenever a change needs to be made that will impact the contract between a unit and its dependencies, Discovery Testing suggests deleting the unit and its entire sub-tree of dependencies (along with their tests) and test-driving a fresh implementation with the new requirements in mind.
 
 ### De-emphasis on regression safety
 
