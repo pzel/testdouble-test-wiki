@@ -37,7 +37,7 @@ describe "#say"
 end
 ```
 
-Some tools, like RSpec-given, jasmine-given, and mocha-gwt were designed around emphasizing the three phases:
+Some tools, like [RSpec-given](https://github.com/jimweirich/rspec-given), [jasmine-given](https://github.com/searls/jasmine-given), and [mocha-gwt](https://www.npmjs.com/package/mocha-gwt) were designed around emphasizing the three phases:
 
 ``` ruby
 describe "#say"
@@ -48,3 +48,5 @@ end
 ```
 
 ## Maintaining lexical order
+
+Typically it's natural to write tests in arrange-act-assert order, but some testing utilities make this unhelpfully difficult, in particular [[mock]] objects, which require their expectations be set (an Assert phase action) prior to invocation of the [[subject]] (the Act phase). Because tests with [[mock]] assertions can be awkward to read and understand, [[spies|spy]] are often favored as an alternative.
