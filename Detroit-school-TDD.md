@@ -56,5 +56,11 @@ In contrast, [[London-school|London-school TDD]] practitioners tend to have very
 
 Practitioners of Detroit-school TDD often favor "bottom-up" development, in which smaller units are developed first (in anticipation of their being needed by the larger system) and only later composed in use by higher-order units. To illustrate, a developer might test-drive a model and a particular sorting function before plugging both of them into the test of an HTTP controller that would utilize each.
 
+This tendency emerges because "outside-in" development would result in uncomfortably large units of work. From the previous example, attempting "TDD an HTTP controller" would first require the developer to implement both a model and a sorting algorithm in order to make realistic test cases of the controller's behavior pass. Working in such coarse steps causes numerous problems, from [blank-slate syndrome](http://blog.codinghorror.com/avoiding-blank-page-syndrome/), to [[accidental creativity]] of the depended-on types, to a much-too-heavy refactor step extracting those types.
 
-The reason bottom-up development is common in this school is because working "outside-in" can result in far too large of units of work to be comfortable, which can result in analysis paralysis.
+A significant drawback of bottom-up development is the opportunity for waste, dead code, and rework to result: 
+
+* Waste, because it's fairly common that the subordinate components the developer predicts they will need won't actually be needed when it comes time to plug them into the public-facing unit (a customer would be right to question time spent writing  a fancy sorting algorithm when the HTTP controller they asked for turns out not to need it)
+* Dead code, because it's up to the developer to (often, arbitrarily) decide how many test cases are "enough" for a given unit; each test case the unit satisfies naturally results in a more complex unit, which may result in code paths that are unreachable by the higher-order components that will ultimately depend on them
+* Rework, because the API (e.g. method signature) of the subordinate coordinates is predicted before the higher-order component which will depend on it; while developing the higher-order component, perhaps the data available doesn't match what the developer predicted, which would require a change to the subordinate unit's inputs
+
