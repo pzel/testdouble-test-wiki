@@ -8,7 +8,9 @@ Only test the behaviors you know you need to care about. For example, if the des
 
 Each test should ensure all the behaviors the author wants to ensure about the subject. 
 
-Examples of **insufficient tests**:
+Examples of **insufficient tests** follow
+
+### Insufficient assertions
 
 ``` ruby
 def add(a,b)
@@ -22,6 +24,8 @@ end
 ```
 
 The above will indeed test something gets returned, but not that adding is occurring.
+
+### Liberal stubs
 
 Here, for an [[isolation test]]:
 
