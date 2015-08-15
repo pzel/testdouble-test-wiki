@@ -4,6 +4,30 @@ Jim Weirich used this phrase to describe tests that were both complete specifica
 
 Only test the behaviors you know you need to care about. For example, if the desired behavior of a particular edge case doesn't truly matter yet or isn't fully understood, don't write a test for it yet. Doing so would restrict the freedom to refactor the implementation. Additionally, it will send the signal to future readers that this behavior is actually critical, when it very well might not be (perhaps a form of [[accidental creativity]].
 
+Examples of **unnecessary** tests follow.
+
+### Unreachable edge cases
+
+Suppose the developer knows that input validation occurs higher in the call stack such that their subject will never receive a nil input. However, in the interest of completeness on a test-by-test basis, they write this test:
+
+``` ruby
+describe '#call' do  
+  When(:result) { subject.call(nil)
+  Then { expect(result).to have_failed(UnexpectedNilError) }
+end
+```
+
+Which would require a guard clause that both clutters up the method definition and is knowingly unreachable in the production application:
+
+``` ruby
+def call(input)
+  raise UnexpectedNilError.new("WHY????") if input.nil?
+  #...
+end
+```
+
+These sorts of tests are a type of [[future proofing]], and the added carrying cost to the codebase is generally not worth their perceived potential benefits.
+
 ## Sufficient
 
 Each test should ensure all the behaviors the author wants to ensure about the subject. 
