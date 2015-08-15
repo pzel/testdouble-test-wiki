@@ -1,4 +1,4 @@
-Jim Weirich used this phrase to describe tests that were both complete specifications of their [[subject]] and contained nothing superfluous that would tie the hands of the implementation unnecessarily. It sounds obvious in hindsight, but is a handy concept to keep in mind when evaluating the quality of a test.
+[Jim Weirich](https://en.wikipedia.org/wiki/Jim_Weirich) used this phrase to describe tests that were both complete specifications of their [[subject]] and contained nothing superfluous that would tie the hands of the implementation unnecessarily. It sounds obvious in hindsight, but is a handy concept to keep in mind when evaluating the quality of a test.
 
 ## Necessary
 
