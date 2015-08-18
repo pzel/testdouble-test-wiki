@@ -3,10 +3,6 @@
 |         | Monday | Tuesday | Wednesday | Thursday | Friday |
 | ------  | ------ | ------- | --------- | -------- | ------ |
 | | Intro  |  Debrief |   Debrief   |  Debrief   | Debrief  |   
-| AM  | • [[Identify Learning Goals]] <br> • [[Testing Anti-patterns]] <br> • [[Survey of Tools]] <br> • Set up machines  |  • [[One good test]] <br> • [[Detroit TDD|Detroit-school TDD]] | • [[Frameworks|Testing and Application Frameworks]] <br> • [[Test Suite Design]]  |  • Lightning Talks <br> • Continuous Integration <br> • Quality automation  | Refactoring Legacy code with tests |
+| AM  | • [[Identify Learning Goals]] <br> • [[Testing Anti-patterns]] <br> • [[Survey of Tools]] <br> • [[Set up machines|Training1-Set up Machines]]  |  • [[One good test]] <br> • [[Detroit TDD|Detroit-school TDD]] | • [[Frameworks|Testing and Application Frameworks]] <br> • [[Test Suite Design]]  |  • Lightning Talks <br> • Continuous Integration <br> • Quality automation  | Refactoring Legacy code with tests |
 | PM  | • [[JUnit]] <br> • Mocha 101 <br> • Lightning Talk Assignments | • [[Test Doubles|Test Double]] <br> • [[Math Kata|Arithmetic Kata]] <br> • [[London TDD|London-school TDD]] <br> • [[Detroit vs. London]] |  • [[SAFE tests]] <br> • Cucumber exercise <br> • [[False Negatives|False-Negative Analysis]] <br> • Controlling Test Data | [Code Retreat](http://coderetreat.org/about) | Open Spaces Discussion |
 |  | Retro  | Retro   | Retro     | Retro    | Retro  |
-
-# Setup
-
-We'll be using [this sample project](https://github.com/searls/junit-mocha-example) as a starting point for JUnit and Mocha exercises.
