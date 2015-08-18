@@ -103,3 +103,7 @@ public class ${primary_type_name} {
 The above will require you to type `testedType` yourself, since there is no template variable for the [[subject]] type.
 
 When the depended-on types are defined on the subject, MoreUnit can automatically generate the `@Mock TypeName typeName;` declarations via its "Mock Dependencies in Test Case" (`[Ctrl]-[Alt]-[Shift]-M`) wizard.
+
+### Settings
+
+Another setting that's very worth setting is to configure Maven's Eclipse integration to fetch not only the jars your project depends on, but also their source & documentation. This can be done from `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
