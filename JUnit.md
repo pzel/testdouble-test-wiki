@@ -33,7 +33,10 @@ In a `pom.xml`, these can be specified as:
 
 If you're using Eclipse, a helper that makes it easier to create, run, and switch between production sources and their tests can help tighten [[feedback loops|feedback loop]].
 
-To that ends, install [MoreUnit](http://moreunit.sourceforge.net/#download) (both `MoreUnit For Java` and `MoreUnit For Java: Mock Support`) and restart.
+### Plugins
+
+* Install [MoreUnit](http://moreunit.sourceforge.net/#download) (both `MoreUnit For Java` and `MoreUnit For Java: Mock Support`)
+* Install [EclEmma](http://www.eclemma.org) for code coverage
 
 ### Templates
 
