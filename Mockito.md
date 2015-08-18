@@ -1,0 +1,1 @@
+The good Mockito documentation is actually its [primary JavaDoc page](http://docs.mockito.googlecode.com/hg/org/mockito/Mockito.html).
