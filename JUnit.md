@@ -106,4 +106,7 @@ When the depended-on types are defined on the subject, MoreUnit can automaticall
 
 ### Settings
 
-Another setting that's very worth setting is to configure Maven's Eclipse integration to fetch not only the jars your project depends on, but also their source & documentation. This can be done from `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
+Also consider making these setting changes to Eclipse:
+
+* Maven's Eclipse integration to fetch not only the jars your project depends on, but also their source & documentation. This can be done from `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
+* Click the downward-facing triangle in the explorer view, and select `Package Presentation` -> `Hierarchical` to get a better view at organizing packages in logical pods
