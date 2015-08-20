@@ -12,5 +12,3 @@ References:
 
 * [Michael Feathers](https://twitter.com/mfeathers)' book, "[Working Effectively with Legacy Code](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)"
 * [Sandi Metz](http://www.sandimetz.com)'s RailsConf 2014 presentation: "[All the small things](https://www.youtube.com/watch?v=8bZh5LMaSmE)", in which she explains her approach to the [Gilded Rose Kata](https://github.com/testdouble/contributing-tests/wiki/Gilded-Rose-Kata)
-
-https://github.com/testdouble/contributing-tests/wiki/Gilded-Rose-Kata
