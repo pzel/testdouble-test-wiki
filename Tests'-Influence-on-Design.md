@@ -39,7 +39,7 @@ end
 
 After a while, the test author would probably be annoyed with the long lines needed to invoke the method without breaking a new line. They'd also probably be tired of mistyping "letter_of_the_day", too. In response to the actual pain of using this method five times, the developer might decide to change its API to a two-argument method (and maybe rename `letter_of_the_day` while they were at it).
 
-This is an (albeit, contrived) example of the benefit of having code that has been used a lot before its API has seeped throughout a system is that it's still quite cheap to improve the API before it escapes into use by other parts of an application.
+This is an (albeit, contrived) example of the benefit of having code that has been used a lot before its API has seeped throughout a system: it's still quite cheap to improve the API before it escapes into use by other parts of an application.
 
 ## Increased Coupling
 
