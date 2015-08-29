@@ -95,3 +95,14 @@ These tests are normally written outside-in (meaning the top-level caller is tes
 
 Recently with a training course, we implemented the [[Unusual Spending Kata]], and we spent perhaps 20% of the entire kata's implementation iterating on the dependencies we thought would best serve the top-level unit. Not only how to carve up the behavior, but the best data model to pass between the three dependencies we arrived at. When an API was awkward or the types didn't line up, we got feedback from the act of writing that test and changed the dependencies' APIs—often drastically. However, because those dependencies literally didn't exist yet, there was never a cheaper time to change them!
 
+In cases like the above, the test is *intimately* coupled to the [[subject]]. The benefit of tests like these are usually front-loaded in the challenge of writing them well and being forced to look at the design from multiple angles in order to break the problem down. The cost of that coupling, however, is also high—refactoring that subject means reworking the test to the same extent, which means: 
+
+* Regression safety of collaborator types needs to come from somewhere else (e.g. a [[SAFE test|SAFE tests]])
+* Each collaborator type should be small and focused only on the imperative interaction of its dependencies, keeping any logic (e.g. looping, branching, computation) to a minimum
+* It's often smarter to default-to-deleting collaborator types (and their tests, and often all their dependencies and their tests) when requirements change, because the cost to refactor is typically too high for what ought to be a very small unit of code
+
+This most granular example of coupling in tests showcases the extreme: incredibly rich feedback about the design of the system, typically resulting in small, hyper-focused units with carefully-chosen naming and easy-to-use APIs. They come at the cost, however, of significantly decreased freedom to refactor the implementation aggressively, which is why [[Discovery Testing]] recommends developers default to deleting-and-redeveloping local sub-trees of dependencies when requirements change significantly. This can result in reliably comprehensible designs, but with an increased base cost to requirement changes.
+
+## Conclusion
+
+Almost any test has the capability of providing helpful design cues about the subject it directly interacts with. To make the most of that capability requires a keen awareness by the developer of the level of coupling they're aiming for in their test and the implications of that coupling on the design and malleability of their code. 
