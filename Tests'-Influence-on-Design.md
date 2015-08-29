@@ -40,3 +40,19 @@ end
 After a while, the test author would probably be annoyed with the long lines needed to invoke the method without breaking a new line. They'd also probably be tired of mistyping "letter_of_the_day", too. In response to the actual pain of using this method five times, the developer might decide to change its API to a two-argument method (and maybe rename `letter_of_the_day` while they were at it).
 
 This is an (albeit, contrived) example of the benefit of having code that has been used a lot before its API has seeped throughout a system is that it's still quite cheap to improve the API before it escapes into use by other parts of an application.
+
+## Increased Coupling
+
+> Woah, increased coupling is always a bad thing, right!?
+> 
+> **—Everyone**
+
+Coupling is not a four-letter-word. Any time you invoke a piece of code, you're coupling it to the caller—from that point forward, the called method can't change without considering the impact on the caller. All use is coupling. All reuse is additional coupling. A system with minimal coupling is a system without any abstraction or invocation. Deciding whether and how to couple two pieces of code is a fine art in software development, and it's the source of much debate.
+
+Simply by using the [[subject]] code under test, a test becomes coupled to that subject's public API and its behavior, if not the implementation itself. If a test uses a subject in a variety of contexts (e.g. testing error states or unconventional inputs), then there may be logical coupling between the test and the source that serve absolutely no benefit to the production system at all. (In fact, most tests I see against unexpected inputs produce added complexity in production code but are actually _unreachable_ in the production system, because any number of methods higher in the call stack will have already normalized the same inputs.)
+
+So, if all test code creates (at least some sorts of) coupling to its [[subject], then how should we manage it? And what, after all, does this have to do with improving the code's design? To understand this, we'll work outside in with some examples.
+
+### Minimally-coupled tests
+
+A test that's minimally coupled
