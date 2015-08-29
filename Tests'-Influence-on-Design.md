@@ -61,7 +61,7 @@ A test that's minimally coupled to its [[subject]] will exercise it from a separ
 
 The benefit of minimizing coupling is clear: the implementation can be changed dramatically (Rails could be replaced by Phoenix; Angular could be replaced by Ember) and the tests could still provide regression safety without needing to be changed substantially. If all you value is catching bugs with an automated test suite before they reach production, you might opt for a broad suite of tests like this, because their only focus is on the extrinsic behavior of the system and they won't (if designed well) encounter churn due to course-of-business implementation changes.
 
-Their are, of course, numerous downsides to leaning heavily on these sorts of tests, but when speaking specifically to the impact that tests can have on design, consider this: by having no coupling whatsoever to the implementation, writing a bunch of these tests provides no insight into how well the code is factored. The most these tests can tell you is how accessible the application is, since UI automation tools tend to share a lot of DNA with accessibility tools.
+There are, of course, numerous downsides to leaning heavily on these sorts of tests, but when speaking specifically to the impact that tests can have on design, consider this: by having no coupling whatsoever to the implementation, writing a bunch of these tests provides no insight into how well the code is factored. The most these tests can tell you is how accessible the application is, since UI automation tools tend to share a lot of DNA with accessibility tools.
 
 ### Coupling to the Public API
 
