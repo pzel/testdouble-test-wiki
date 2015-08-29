@@ -47,7 +47,7 @@ This is an (albeit, contrived) example of the benefit of having code that has be
 > 
 > **—Everyone**
 
-Coupling is not a four-letter-word. Any time you invoke a piece of code, you're coupling it to the caller—from that point forward, the called method can't change without considering the impact on the caller. All use is coupling. All reuse is additional coupling. A system with minimal coupling is a system without any abstraction or invocation. Deciding whether and how to couple two pieces of code is a fine art in software development, and it's the source of much debate.
+Coupling is not a four-letter-word. Any time you invoke a piece of code, you're coupling it to the caller—from that point forward, the called method can't change without considering the impact on the caller. All use is coupling. All reuse is additional coupling. A system with minimal coupling is a system without any abstraction or invocation. Deciding whether and how to couple two pieces of code is a fine art in software development, and as such, it's a point of never-ending tension as systems are designed and redesigned.
 
 Simply by using the [[subject]] code under test, a test becomes coupled to that subject's public API and its behavior, if not the implementation itself. If a test uses a subject in a variety of contexts (e.g. testing error states or unconventional inputs), then there may be logical coupling between the test and the source that serve absolutely no benefit to the production system at all. (In fact, most tests I see against unexpected inputs produce added complexity in production code but are actually _unreachable_ in the production system, because any number of methods higher in the call stack will have already normalized the same inputs.)
 
@@ -55,4 +55,28 @@ So, if all test code creates (at least some sorts of) coupling to its [[subject]
 
 ### Minimally-coupled tests
 
-A test that's minimally coupled
+A test that's minimally coupled to its [[subject]] will exercise it from a separate process, without knowledge of any of its names (e.g. class names, function names, even CSS selectors). A minimally-coupled test also can't know any details about how the production system manages its data, so it typically can't control its test data in a clean way. 
+
+[Aside: because of how inconvenient it is to the developer, these sorts tests, whether you call them Full-Stack, End-to-End, Smoke, Feature, Acceptance (I just call them [[SAFE tests]] lately) almost always make concessions that introduce coupling to the system. Most Rails tests, for instance, will make data setup easier by maintaining access to the application's models, which requires the tests to run in-process and couples the tests to individual model names and methods.]
+
+The benefit of minimizing coupling is clear: the implementation can be changed dramatically (Rails could be replaced by Phoenix; Angular could be replaced by Ember) and the tests could still provide regression safety without needing to be changed substantially. If all you value is catching bugs with an automated test suite before they reach production, you might opt for a broad suite of tests like this, because their only focus is on the extrinsic behavior of the system and they won't (if designed well) encounter churn due to course-of-business implementation changes.
+
+Their are, of course, numerous downsides to leaning heavily on these sorts of tests, but when speaking specifically to the impact that tests can have on design, consider this: by having no coupling whatsoever to the implementation, writing a bunch of these tests provides no insight into how well the code is factored. The most these tests can tell you is how accessible the application is, since UI automation tools tend to share a lot of DNA with accessibility tools.
+
+### Coupling to the Public API
+
+Say your application provides a public API, or that there is a clear seam just "below" the UI by which you can invoke the top level of actual classes and methods easily. If you test at this layer, you'll only be marginally more coupled to the implementation (if those top-level units change their interface, the tests will break). 
+
+However, no matter how many tests you write against this layer to drive out the extrinsic behavior, the feedback you receive about the design of the code will stop at the public API. Are the [[subject]]'s methods delegating to well-named abstractions that break up the problem in a logical way? Hopefully! But if they are, it's not because the test was influencing it.
+
+I wrote the first iteration of [gimme](https://github.com/searls/gimme) driven nothing but top-level API examples specified by Cucumber. I was able to get through two-thirds of my desired features this way without issue. However, the robust test coverage gave me false confidence in my design, and when it came time to implement some next feature, I realized I couldn't without rewriting the whole thing. I'd created a beautiful public API as a thin veil over a rat's nest of half-baked abstractions and long methods. The benefit, though, was that even though I had to rewrite it, I at least could rely on those tests to tell me I hadn't inadvertently missed a requirement.
+
+### Coupling to each "Unit"
+
+[Note that the definitions to "unit" and "public API" are rarely rigorously defined consistently on a project.]
+
+Many people who practice [[Detroit-school TDD]] will expect to write for every unit `Foo` in their system a unit test named `FooTest` that's symmetrically positioned under some `test/` directory for easy organization. These tests typically invoke the public API of the [[subject]] and call through to its actual dependencies (doing everything they can to minimize use of [[test doubles|test double]], preferring to test each unit under realistic conditions for maximum regression safety).
+
+In this way, these tests aren't coupled to the "implementation" of any given unit, but they are almost certainly coupled to units that are only used internally by an application.
+
+To illustrate the point, suppose a URL router invokes `FooController` when a user requests `/foos`, and `FooController` invokes a `FooRepository` to get some data. If we wrote a test of `FooRepository`, that test might only be coupled to the "public" behavior of `FooRepository`, but then again, `FooRepository` isn't very _public_ if it's only invoked by another object internal to the implementation of the application, `FooController`. In this way, discussing whether a test is "coupled to the implementation" is a sort of shell game, enabled by the very natural practice of introducing first-class abstractions in a system. Is `FooRepositoryTest` coupled to `FooRepository`'s implementation? Perhaps not. Is `FooRepositoryTest` coupled to the implementation of the broader app? You bet it is.
