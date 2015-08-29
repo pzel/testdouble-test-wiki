@@ -85,7 +85,7 @@ This layer of testing provides more feedback than the layer above it, however. N
 
 [Aside: test suites that aim for this level of coupling—exercising the public API of each unit but calling through to real instances of each of those units' dependencies—may provide increased regression safety, but often at the cost of incredibly high [[redundant coverage]]]
 
-### Coupling to the implementation of a "Unit"
+### Coupling to the dependencies of a "Unit"
 
 When practicing an isolation-testing brand of TDD like [[London-school|London-school TDD]] or [[Discovery Testing]], the frequent practice of replacing a [[subject]]'s dependencies with [[test doubles|test double]] will both increase the level of coupling to those units as well as the potential for influencing the design of that unit.
 
@@ -93,11 +93,12 @@ When practicing an isolation-testing brand of TDD like [[London-school|London-sc
 
 These tests are normally written outside-in (meaning the top-level caller is tested and implemented before the units it calls), which means that the test case is the first place where anyone asks "what dependencies could help the [[subject]] do its job?". Next, entirely from within this first test, the developer will name a dependended-on type, create a test double for it, see that it's provided to the subject, name the method the subject would need along with the necessary parameters, and then either configure a [[stubbing|stub]] or [[verification|spy]] for each in the test.
 
-Recently with a training course, we implemented the [[Unusual Spending Kata]], and we spent perhaps 20% of the entire kata's implementation iterating on the dependencies we thought would best serve the top-level unit. Not only how to carve up the behavior, but the best data model to pass between the three dependencies we arrived at. When an API was awkward or the types didn't line up, we got feedback from the act of writing that test and changed the dependencies' APIs—often drastically. However, because those dependencies literally didn't exist yet, there was never a cheaper time to change them!
+Recently in a training course, we implemented the [[Unusual Spending Kata]], and we spent perhaps 20% of the entire kata's implementation iterating on the dependencies we thought would best serve the top-level unit. Not only how to carve up the behavior, but the best data model to pass between the three dependencies we arrived at. When an API was awkward or the types didn't line up, we got feedback from the act of writing that test and changed the dependencies' APIs—often drastically. However, because those dependencies literally didn't exist yet, there was never a cheaper time to change them!
 
-In cases like the above, the test is *intimately* coupled to the [[subject]]. The benefit of tests like these are usually front-loaded in the challenge of writing them well and being forced to look at the design from multiple angles in order to break the problem down. The cost of that coupling, however, is also high—refactoring that subject means reworking the test to the same extent, which means: 
+In cases like the above, the test is *intimately* coupled to the [[subject]]. The benefit of tests like these are mostly front-loaded; the challenge of writing them well and being forced to look at the design from multiple angles in order to break the problem down is their chief benefit. The cost of that coupling, however, is also high—refactoring that subject means reworking the test to the same extent, which means: 
 
-* Regression safety of collaborator types needs to come from somewhere else (e.g. a [[SAFE test]])
+* The test provides confidence that interactions happen _how_ they should occur through [[stubbings|stub]] and/or [[verification|spy]], but since there is little to these units _apart from_ that interaction, almost any change to them will imply a change to something the test is coupled to.
+* As a result, regression safety of collaborator types needs to come from somewhere else (e.g. a [[SAFE test]])
 * Each collaborator type should be small and focused only on the imperative interaction of its dependencies, keeping any logic (e.g. looping, branching, computation) to a minimum
 * It's often smarter to default-to-deleting collaborator types (and their tests, and often all their dependencies and their tests) when requirements change, because the cost to refactor is typically too high for what ought to be a very small unit of code
 
