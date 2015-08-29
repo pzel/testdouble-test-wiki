@@ -57,7 +57,7 @@ So, if all test code creates (at least some sorts of) coupling to its [[subject]
 
 A test that's minimally coupled to its [[subject]] will exercise it from a separate process, without knowledge of any of its names (e.g. class names, function names, even CSS selectors). A minimally-coupled test also can't know any details about how the production system manages its data, so it typically can't control its test data in a clean way. 
 
-[Aside: because of how inconvenient it is to the developer, these sorts tests, whether you call them Full-Stack, End-to-End, Smoke, Feature, Acceptance (I just call them [[SAFE tests]] lately) almost always make concessions that introduce coupling to the system. Most Rails tests, for instance, will make data setup easier by maintaining access to the application's models, which requires the tests to run in-process and couples the tests to individual model names and methods.]
+[Aside: because of how inconvenient it is to the developer, these sorts tests, whether you call them Full-Stack, End-to-End, Smoke, Feature, Acceptance (I just call them [[SAFE tests|SAFE test]] lately) almost always make concessions that introduce coupling to the system. Most Rails tests, for instance, will make data setup easier by maintaining access to the application's models, which requires the tests to run in-process and couples the tests to individual model names and methods.]
 
 The benefit of minimizing coupling is clear: the implementation can be changed dramatically (Rails could be replaced by Phoenix; Angular could be replaced by Ember) and the tests could still provide regression safety without needing to be changed substantially. If all you value is catching bugs with an automated test suite before they reach production, you might opt for a broad suite of tests like this, because their only focus is on the extrinsic behavior of the system and they won't (if designed well) encounter churn due to course-of-business implementation changes.
 
@@ -97,7 +97,7 @@ Recently with a training course, we implemented the [[Unusual Spending Kata]], a
 
 In cases like the above, the test is *intimately* coupled to the [[subject]]. The benefit of tests like these are usually front-loaded in the challenge of writing them well and being forced to look at the design from multiple angles in order to break the problem down. The cost of that coupling, however, is also high—refactoring that subject means reworking the test to the same extent, which means: 
 
-* Regression safety of collaborator types needs to come from somewhere else (e.g. a [[SAFE test|SAFE tests]])
+* Regression safety of collaborator types needs to come from somewhere else (e.g. a [[SAFE test]])
 * Each collaborator type should be small and focused only on the imperative interaction of its dependencies, keeping any logic (e.g. looping, branching, computation) to a minimum
 * It's often smarter to default-to-deleting collaborator types (and their tests, and often all their dependencies and their tests) when requirements change, because the cost to refactor is typically too high for what ought to be a very small unit of code
 
