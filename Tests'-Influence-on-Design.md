@@ -71,7 +71,7 @@ However, no matter how many tests you write against this layer to drive out the 
 
 I wrote the first iteration of [gimme](https://github.com/searls/gimme) driven nothing but top-level API examples specified by Cucumber. I was able to get through two-thirds of my desired features this way without issue. However, the robust test coverage gave me false confidence in my design, and when it came time to implement some next feature, I realized I couldn't without rewriting the whole thing. I'd created a beautiful public API as a thin veil over a rat's nest of half-baked abstractions and long methods. The benefit, though, was that even though I had to rewrite it, I at least could rely on those tests to tell me I hadn't inadvertently missed a requirement.
 
-### Coupling to each "Unit"
+### Coupling to the public API of each "Unit"
 
 [Note that the definitions to "unit" and "public API" are rarely rigorously defined consistently on a project.]
 
@@ -80,3 +80,13 @@ Many people who practice [[Detroit-school TDD]] will expect to write for every u
 In this way, these tests aren't coupled to the "implementation" of any given unit, but they are almost certainly coupled to the many aspects of the broader application, as most classes represent "internal implementation" from the perspective of the broader application and would never otherwise be known to the outside world but for the unit test that exercises them.
 
 To illustrate the point, suppose a URL router invokes `FooController` when a user requests `/foos`, and `FooController` invokes a `FooRepository` to get some data. If we wrote a test of `FooRepository`, that test might only be coupled to the "public" behavior of `FooRepository`, but then again, `FooRepository` isn't very _public_ if it's only invoked by another object internal to the implementation of the application, `FooController`. In this way, discussing whether a test is "coupled to the implementation" is a sort of shell game, enabled by the very natural practice of introducing first-class abstractions in a system. Is `FooRepositoryTest` coupled to `FooRepository`'s implementation? Perhaps not. Is `FooRepositoryTest` coupled to the implementation of the broader app? You bet it is.
+
+This layer of testing provides more feedback than the layer above it, however. Now, the public API of each unit will have been corroborated by a unit test hammering it from every angle. If any individual object is particularly hard to use, then presumably a unit test will have helped the developer identify it early. 
+
+[Aside: test suites that aim for this level of coupling—exercising the public API of each unit but calling through to real instances of each of those units' dependencies—may provide increased regression safety, but often at the cost of incredibly high [[redundant coverage]]]
+
+### Coupling to the implementation of a "Unit"
+
+When practicing an isolation-testing brand of TDD like [[London-school|London-school TDD]] or [[Discovery Testing]], the frequent practice of replacing a [[subject]]'s dependencies with [[test doubles|test double]] will both increase the level of coupling to those units as well as the potential for influencing the design of that unit.
+
+[Aside: this only applies to the tests of [[Collaborator]] objects which depend on other units defined in the application; tests of pure function leaf nodes and value objects shouldn't use test doubles at all, because they typically have no dependencies.]
