@@ -1,6 +1,6 @@
 Some people will insist that "TDD" stands for "Test-Driven-*Design*" as opposed to merely "Development", because the perceived positive influence on the design of production code is, for many, a primary reason to bother with TDD at all.
 
-There are several ways that TDD impacts design, but most of it can be be broken up into two categories: increased usage and  increased coupling.
+There are several ways that TDD impacts design, but most of it can be broken up into two categories: increased usage and  increased coupling.
 
 ## Increased Usage
 
