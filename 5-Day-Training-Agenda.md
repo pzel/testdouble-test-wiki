@@ -13,7 +13,7 @@ To add some watching to all the reading in this wiki, here are some conference t
 
 * [Breaking up (with) your test suite](http://blog.testdouble.com/posts/2014-05-25-breaking-up-with-your-test-suite.html)
 * [The failures of intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html)
-* [JavaScript Testing Tactics](http://blog.testdouble.com/posts/2013-10-03-javascript-testing-tactics.html)
+* [JavaScript Testing Tactics](http://blog.testdouble.com/posts/2014-05-09-javascript-testing-tactics-lightning-edition.html)
 * [The Social Coding Contract](http://blog.testdouble.com/posts/2014-12-02-the-social-coding-contract.html)
 
 ## Notes
