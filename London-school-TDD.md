@@ -6,7 +6,7 @@ I can't speak for the [GOOS](http://www.growing-object-oriented-software.com)'s 
 
 ## What is it?
 
-London-school TDD is a name given to an approach to using test-driven development to build systems that consistently arrive at clean, minimal designs of small, focused units of code (for more, see [[Tests' Influence on Design]]. It shares many characteristics with [[Detroit-school TDD]], but differs significantly enough to warrant conceptualizing it as a separate methodology. Moreover, many terms and concepts familiar in [[Detroit-school|Detroit-school TDD]] are commonly overloaded when discussing London-school testing, which has been the source of endless confusion among developers. 
+London-school TDD is a name given to an approach to using test-driven development to build systems that consistently arrive at clean, minimal designs of small, focused units of code (for more, see [[Tests' Influence on Design]]). It shares many characteristics with [[Detroit-school TDD]], but differs significantly enough to warrant conceptualizing it as a separate methodology. Moreover, many terms and concepts familiar in [[Detroit-school|Detroit-school TDD]] are commonly overloaded when discussing London-school testing, which has been the source of endless confusion among developers. 
 
 At its most basic, the workflow aims to systematically reduce a problem's complexity into small and sensible component parts from the outside-in:
 
