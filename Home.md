@@ -2,7 +2,7 @@ This wiki presents some notes on testing.
 
 ## What?
 
-It's still very much a work-in-progress, so feel free to peruse any pages that interest you. Perhaps the most novel aspect to this repo (at first) will be the discussion of [[Detroit-school|Detroit-school TDD]] and [[London-school|London-school TDD]] TDD, as that isn't well articulated on the Internet, as far as I know.
+It's still very much a work-in-progress, so feel free to peruse any pages that interest you. Perhaps the most novel aspect to this repo right now is the discussion of the [[trade-off between regression safety in testing and design|Tests'-Influence-on-Design]]. There will also be a discussion of [[Detroit-school|Detroit-school TDD]] and [[London-school|London-school TDD]] TDD, as that isn't well articulated on the Internet, as far as I know.
 
 ## Why?
 
