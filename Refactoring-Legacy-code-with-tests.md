@@ -8,7 +8,7 @@ This flow is pretty common when a part of a legacy system needs to be changed:
 
 1. Identify a seam that's as close to the code to be changed as is reasonable; if necessary, make minimally-risky changes (e.g. via refactoring tooling) to create an easier-to-test API by introducing indirection to it
 2. Write a large number of characterization tests against the API exposed by the seam, covering as many interesting inputs and broader system states as possible. Observe the outputs or side effects for each arrangement and then lock them down with robust assertions, regardless of whether they make any sense.
-3. Using the characterization tests of the safety net, feel free to aggressively refactor the code, frequently running the characterization test along the way to ensure the refactor (or rewrite) isn't changing observable behavior
+3. Using the characterization tests as your safety net, feel free to aggressively refactor the code, frequently running the characterization test along the way to ensure the refactor (or rewrite) isn't changing observable behavior
 4. Backfill the newly-refactored units with clean and idiomatic tests of their own that cover their behavior neatly
 5. Test & implement the desired change
 6. Ensure everything is working
