@@ -1,4 +1,6 @@
-Put simply, "partial mock" refers to any actual object which has been wrapped or changed to provide artificial responses or verify actual interactions by a test. Partial mocks are widely considered to be an anti-pattern of [[test doubles|test double]] usage.
+If a [[test double]] is a crash dummy, then a partial mock is a person wearing a [crash dummy Halloween costume](https://www.google.com/search?q=crash+dummy+halloween+costume&safe=off&client=safari&rls=en&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAWoVChMI0ef2l7amyAIVxY8NCh13ZwAA&biw=1240&bih=716): still a stand-in for the real thing, but whose purpose is definitely less straightforward.
+
+Put simply, "partial mock" refers to any actual object which has been wrapped or changed to provide artificial responses or verify actual interactions by a test. Partial mocks are widely considered to be an anti-pattern of [[test double]] usage.
 
 ## Why are they used
 
