@@ -32,8 +32,8 @@ Allow mixing of normal and shouted names by separating the response into two gre
 
 ## Requirement 7
 
-If any entries in `name` are a string containing a comma, split it as its own input. For example, when `name` is ["Bob", "Charlie, Dianne"], then the method should return the string `"Hello, Bob, Charlie, and Dianne"`.
+If any entries in `name` are a string containing a comma, split it as its own input. For example, when `name` is `["Bob", "Charlie, Dianne"]`, then the method should return the string `"Hello, Bob, Charlie, and Dianne."`.
 
 ## Requirement 8
 
-Allow the input to escape intentional commas introduced by Requirement 7. These can be escaped in the same manner that CSV is, with double quotes surrounding the entry. For example, For example, when `name` is ["Bob", "\"Charlie, Dianne\""], then the method should return the string `"Hello, Bob and Charlie, Dianne"`.
+Allow the input to escape intentional commas introduced by Requirement 7. These can be escaped in the same manner that CSV is, with double quotes surrounding the entry. For example, For example, when `name` is ["Bob", "\"Charlie, Dianne\""], then the method should return the string `"Hello, Bob and Charlie, Dianne."`.
