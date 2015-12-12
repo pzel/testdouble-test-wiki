@@ -13,7 +13,7 @@ What's most important about the concept is that the author of the test is aware 
 
 When mindful of the three phases, it's trivially easy to separate. Some testing frameworks support this separation, and some don't. 
 
-Most [[xUnit]] tools don't have any built-in awareness of the pattern, so it's not uncommon to see xUnit tests separate the phases with significant whitespace such as:
+Most [[xUnit]] tools don't have any built-in awareness of the pattern, so it's common to see xUnit tests separate the phases with significant whitespace such as:
 
 ``` java
 public void testSomething() {
