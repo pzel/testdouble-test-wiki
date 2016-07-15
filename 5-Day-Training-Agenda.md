@@ -11,6 +11,7 @@
 
 To add some watching to all the reading in this wiki, here are some conference talks you might be interested in watching that pertain to testing and open source:
 
+* [How to stop hating your tests](http://blog.testdouble.com/posts/2015-11-16-how-to-stop-hating-your-tests.html)
 * [Breaking up (with) your test suite](http://blog.testdouble.com/posts/2014-05-25-breaking-up-with-your-test-suite.html)
 * [The failures of intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html)
 * [JavaScript Testing Tactics](http://blog.testdouble.com/posts/2014-05-09-javascript-testing-tactics-lightning-edition.html)
