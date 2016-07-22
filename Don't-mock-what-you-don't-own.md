@@ -53,6 +53,8 @@ td.when('/my/path').thenCallback(null, 'some response!')
 // … the rest of the test
 ```
 
+There's an additional benefit to wrapping third-party dependencies in your own adapter: they can serve as a specification of what you're using in that dependency. For example, if the library in question provides a large surface area of dozens of functions, and your wrapper only exposes three of them, then you've increased the codebase's flexibility by making it easier to replace that dependency in the future. If an alternative dependency comes along, you know it only needs to do those three things (as opposed to dozens), and you can even see what configuration parameters you may need—all in one place!
+
 Here's some more reading:
 
 * This [post by Eric Smith on the topic](https://8thlight.com/blog/eric-smith/2011/10/27/thats-not-yours.html)
