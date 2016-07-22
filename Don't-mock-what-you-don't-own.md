@@ -35,7 +35,11 @@ That would be really awkward to fake with a test double, and it would be _useles
 
 ``` js
 function get (path, callback) {
-  new HttpRequest('https://long.production.url/' + path, {method: 'GET', crossOrigin: true, cookie: getCookie()}, cb).send()
+  new HttpRequest(
+    'https://long.production.url/' + path, 
+    {method: 'GET', crossOrigin: true, cookie: getCookie()}, 
+    cb
+  ).send()
 }
 ```
 
