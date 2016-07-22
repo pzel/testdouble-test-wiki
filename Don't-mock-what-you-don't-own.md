@@ -26,7 +26,8 @@ The prescription implied by "don't mock what you don't own" is to introduce your
 For instance, if you depend on an HTTP library for which each use looks like:
 
 ```js
-new HttpRequest('https://long.production.url/1', , function (error, response) {
+new HttpRequest('https://long.production.url/1', 
+  {method: 'GET', crossOrigin: true, cookie: getCookie()}, function (error, response) {
   // handle request
 }).send()
 ```
