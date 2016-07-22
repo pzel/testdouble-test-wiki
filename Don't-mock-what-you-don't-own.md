@@ -4,7 +4,7 @@ When working with [[test doubles|Test Double]], you may hear the phrase "Don't M
 
 99% of all mocks in use today are not used for the purpose for which 99% of test double libraries were designed: to facilitate isolated test-driven development aimed at arriving at clean designs of small units that interact via pleasant-to-use interfaces.
 
-Almost all usages of mocking you're likely to find in the wild, however, are used to expediently knock out a real thing that makes a test difficult to implement or run (maybe it's a dependency on an external service, or it's an object that's really painful to construct, or someone just really likes faking stuff out whenever they can). To people who are used to using test doubles in this way, this phrase will make absolutely no sense. In a sense, the phrase simply doesn't apply to this usage of test doubles. In another, that usage of test doubles is often harmful and enables tests with insufficiently clear boundaries between what's tested and what's controlled.
+Almost all usage of mocking you're likely to find in the wild, however, are used to expediently knock out a real thing that makes a test difficult to implement or run (maybe it's a dependency on an external service, or it's an object that's really painful to construct, or someone just really likes faking stuff out whenever they can). To people who are used to using test doubles in this way, this phrase will make absolutely no sense. In a sense, the phrase simply doesn't apply to this usage of test doubles. In another, that usage of test doubles is often harmful and enables tests with insufficiently clear boundaries between what's tested and what's controlled.
 
 ## Background of the phrase
 
