@@ -39,7 +39,7 @@ function get (path, callback) {
   new HttpRequest(
     'https://long.production.url/' + path, 
     {method: 'GET', crossOrigin: true, cookie: getCookie()}, 
-    cb
+    callback
   ).send()
 }
 ```
