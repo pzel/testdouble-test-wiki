@@ -10,6 +10,7 @@ Java unit testing tools:
 * [JUnit](http://junit.org) 
 * [Hamcrest](https://code.google.com/p/hamcrest/wiki/Tutorial) assertions (see: [assertThat](https://github.com/junit-team/junit/wiki/Matchers-and-assertthat) )
 * [Mockito](http://mockito.org) for [[test doubles|test double]]
+* [EclEmma](http://www.eclemma.org) for code coverage
 
 Java integration testing tools:
 * [Selenium WebDriver](http://www.seleniumhq.org/projects/webdriver/)
@@ -21,4 +22,3 @@ JavaScript unit testing tools:
 * [Mocha](http://mochajs.org)
 * [Chai](http://chaijs.com) for assertions
 * [Sinon](http://sinonjs.org) for [[test doubles|test double]]
-
