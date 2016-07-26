@@ -25,6 +25,7 @@ Verify EclEmma is installed by right-clicking a JUnit test and seeing a "Coverag
 ### IDE Settings
 
 * Maven's Eclipse integration to fetch not only the jars your project depends on, but also their source & documentation. This can be done from `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
+* In order to use tools like JUnit and Hamcrest that have many static utility functions, `Java` -> `Code Style` -> `Organize Imports` and change "Number of static imports needed for .*" to `1`.
 * Click the downward-facing triangle in the explorer view, and select `Package Presentation` -> `Hierarchical` to get a better view at organizing packages into logical sub-groups
 
 ## C&#35;
