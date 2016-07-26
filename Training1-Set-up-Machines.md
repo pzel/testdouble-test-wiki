@@ -2,7 +2,7 @@ This course is going to cover a number of different tools, aimed at a team focus
 
 ## Set up
 
-We'll be using [this sample project](https://github.com/searls/junit-mocha-example) as a starting point for JUnit and Mocha exercises. Follow its README to install the necessary prerequisites and verify the build works.
+We'll be using [this sample project](https://github.com/testdouble/java-junit-example) as a starting point for JUnit and Mocha exercises. Follow its README to install the necessary prerequisites and verify the build works.
 
 ## Java Tools
 
