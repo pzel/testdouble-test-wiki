@@ -80,7 +80,7 @@ public class ${primary_type_name} {
 
 This template is obviously much simpler, as it only pulls in JUnit & Hamcrest assertions.
 
-## C#
+## C&#35;
 
 ### Collaboration tests
 
