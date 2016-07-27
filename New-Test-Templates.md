@@ -14,7 +14,7 @@ Next, give a name and paste in the template. The name will be picked up by Eclip
 
 ### Collaboration tests
 
-Collaboration tests specify how the subject under test interacts with its dependencies and are used to break the subject's work down into multiple, focused sub-tasks. The purpose of the test is to ensure the interfaces between the dependencies is sound and that the types of the values passed between those dependencies is sufficient to accomplish the broader task. 
+Collaboration tests specify how the subject under test interacts with its dependencies and are used to break the subject's work down into multiple, focused sub-tasks. The purpose of the test is to ensure the interfaces between the dependencies is sound and that the types of the values passed between those dependencies is sufficient to accomplish the broader task.
 
 Because collaboration tests are used to specify interactions between a subject and dependencies that typically don't exist yet, they typically use [[test doubles|test double]] to stand in for the actual dependencies. As a result, this template uses Mockito to inject test doubles for each dependency
 
@@ -82,6 +82,38 @@ This template is obviously much simpler, as it only pulls in JUnit & Hamcrest as
 
 ## C&#35;
 
+Follow [these directions](https://msdn.microsoft.com/en-us/library/tsyyf0yh.aspx) to export
+the following snippets as templates in Visual Studio, using the snippet for step 3.
+
 ### Collaboration tests
 
+```csharp
+using Xunit;
+using Moq;
+
+namespace $ {
+    public class $ {
+
+        [Fact]
+        public void Test() {
+
+        }
+    }
+}
+```
+
 ### Regression tests
+
+```csharp
+using Xunit;
+
+namespace $rootnamespace$ {
+    public class $itemname$ {
+
+        [Fact]
+        public void Test() {
+
+        }
+    }
+}
+```
