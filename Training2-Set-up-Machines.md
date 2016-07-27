@@ -50,5 +50,13 @@ When working on a multi-project Maven module or a working set, you can group tho
 
 <img width="660" alt="screen shot 2016-07-27 at 9 55 10 am" src="https://cloud.githubusercontent.com/assets/79303/17177939/82a06aaa-53e1-11e6-83f3-fb52251976c6.png">
 
+#### Autosave 
+
+When juggling a lot of files, switching tabs after forgetting to manually save can cause needless disruption to one's workflow—debugging only to realize the root cause was that a file wasn't saved can be really frustrating! 
+
+To configure Eclipse (4.6 & later) to autosave dirty editors, visit `Preferences` -> `General` -> `Editors` -> `Autosave` and enable autosave for dirty editors. Unless you have a slow build and "build automatically" enabled, reduce the default 20 second timer to something shorter (I have mine set to 1 second here):
+
+<img width="662" alt="screen shot 2016-07-27 at 10 13 47 am" src="https://cloud.githubusercontent.com/assets/79303/17178286/dcb3b384-53e2-11e6-8977-f3e360df7e9d.png">
+
 
 ## C&#35;
