@@ -15,12 +15,17 @@ There are a couple IDE plugins that we will use to reduce the amount of friction
 
 * [MoreUnit](http://moreunit.sourceforge.net/#download)
 * [EclEmma](http://www.eclemma.org/installation.html)
+* [Natural](https://github.com/rlogiacco/Natural)
 
-If either plugin's update site is inaccessible, download the source and manually install the plugin by placing the expanded plugin into the `dropins` folder in your Eclipse installation directory and then restarting Eclipse.
+All three of these plugins can be installed via the Eclipse marketplace, their own update sites, or manually. If a plugin's update site is inaccessible, download the source and manually install the plugin by placing the expanded plugin into the `dropins` folder in your Eclipse installation directory and then restarting Eclipse.
 
 Verify MoreUnit is installed by right-clicking anywhere in a Java source listing and verifying a "MoreUnit" item appears in the context menu.
 
 Verify EclEmma is installed by right-clicking a JUnit test and seeing a "Coverage As…" item in the context menu.
+
+Verify Natural is installed by opening a Cucumber feature file (example: `bank-ocr/src/test/resources/bank/bank-ocr.feature`) and verify that syntax highlighting is enabled like so:
+
+<img width="440" alt="screen shot 2016-07-27 at 11 00 20 am" src="https://cloud.githubusercontent.com/assets/79303/17180119/5ef04be0-53e9-11e6-8482-901443fda216.png">
 
 ### IDE Settings
 
