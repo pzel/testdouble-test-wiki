@@ -24,9 +24,31 @@ Verify EclEmma is installed by right-clicking a JUnit test and seeing a "Coverag
 
 ### IDE Settings
 
-* Maven's Eclipse integration to fetch not only the jars your project depends on, but also their source & documentation. This can be done from `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
-* In order to use tools like JUnit and Hamcrest that have many static utility functions, `Java` -> `Code Style` -> `Organize Imports` and change "Number of static imports needed for .*" to `1`.
-* Click the downward-facing triangle in the explorer view, and select `Package Presentation` -> `Hierarchical` to get a better view at organizing packages into logical sub-groups
+#### Download source & docs
+
+By default, Eclipse will only fetch compiled dependencies, but not the source attachments or JavaDoc. Doing so adds little overhead and allows you to navigate to and read the code you depend on with a simple ctrl-click. Just visit `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
+
+<img width="646" alt="screen shot 2016-07-27 at 9 57 14 am" src="https://cloud.githubusercontent.com/assets/79303/17177689/97ae6d80-53e0-11e6-90ad-49f5d7029fd7.png">
+
+#### Wildcard static imports
+
+In order to clear warnings, it's common to use the "Organize imports" command (ctrl-shift-o), but it has the side effect of creating an explicit import statement for every static import, clearing out any wildcards. This has the side effect of making [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) libraries like Hamcrest harder to use.
+
+To change the behavior of organize imports to wildcard static imports more aggressively, visit  `Java` -> `Code Style` -> `Organize Imports` and change "Number of static imports needed for .*" to `1`
+
+<img width="643" alt="screen shot 2016-07-27 at 10 00 51 am" src="https://cloud.githubusercontent.com/assets/79303/17177827/154a119a-53e1-11e6-8310-1fe13d680f5c.png">
+
+#### Organize packages hierarchically
+
+When creating a lot of classes, it's easier to organize them into well-considered package hierarchies, but by default Eclipse will list them all out in a flat view that makes it harder to navigate. To display them hierarchically, click the Project Explorer pane's downward-facing triangle, and selecting `Package Presentation` -> `Hierarchical`:
+
+<img width="666" alt="screen shot 2016-07-27 at 10 02 47 am" src="https://cloud.githubusercontent.com/assets/79303/17177879/4abb7e54-53e1-11e6-9d94-20d675d5d1e2.png">
+
+#### Organize projects hierarchically
+
+When working on a multi-project Maven module or a working set, you can group those projects together in Eclipse's Project Explorer by clicking the downward-facing triangle, and selecting `Projects Presentation` -> `Hierarchical`:
+
+<img width="660" alt="screen shot 2016-07-27 at 9 55 10 am" src="https://cloud.githubusercontent.com/assets/79303/17177939/82a06aaa-53e1-11e6-83f3-fb52251976c6.png">
+
 
 ## C&#35;
-
