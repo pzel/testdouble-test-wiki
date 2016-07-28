@@ -15,7 +15,7 @@ Once you've imported and installed the top-level project, you'll see that it def
 * [unusual-spending](https://github.com/testdouble/java-testing-example/tree/master/unusual-spending) - a project for practicing the [[Unusual Spending Kata]] (this [vendor](https://github.com/testdouble/java-testing-example/tree/master/unusual-spending-vendor) project supports it)
 * [example-cucumber](https://github.com/testdouble/java-testing-example/tree/master/example-cucumber) - a sandbox for writing cucumber examples
 * [bank-ocr](https://github.com/testdouble/java-testing-example/tree/master/bank-ocr) - a project for using Cucumber to practice the [[Bank OCR Kata|Bank OCR Kata in Cucumber]]
-* [selenium](https://github.com/testdouble/java-testing-example/tree/master/todo-app) - a project for practicing writing JUnit and Cucumber tests with Selenium
+* [selenium](https://github.com/testdouble/java-testing-example/tree/master/selenium) - a project for practicing writing JUnit and Cucumber tests with Selenium
 * [gilded-rose](https://github.com/testdouble/java-testing-example/tree/master/gilded-rose) - a project for practicing the [[Gilded Rose Kata]]
 * [game-of-life](https://github.com/testdouble/java-testing-example/tree/master/game-of-life) - a project to work from for a [[Code Retreat]]
 
