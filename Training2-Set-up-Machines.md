@@ -73,5 +73,11 @@ To configure Eclipse (4.6 & later) to autosave dirty editors, visit `Preferences
 
 <img width="662" alt="screen shot 2016-07-27 at 10 13 47 am" src="https://cloud.githubusercontent.com/assets/79303/17178286/dcb3b384-53e2-11e6-8977-f3e360df7e9d.png">
 
+#### Auto-format
+
+To reduce whitespace commits, it can be helpful to auto-format & auto-organize imports on stage. To set it up, 
+visit `Preferences` -> `Java` -> `Editors` -> `Save Actions` and tick "Perform the selected actions on save", along with "Format source code" and "Organize imports"
+
+<img width="760" alt="screen shot 2016-07-28 at 11 05 35 am" src="https://cloud.githubusercontent.com/assets/79303/17217701/45c63ccc-54b3-11e6-9462-0a6d50b02e4f.png">
 
 ## C&#35;
