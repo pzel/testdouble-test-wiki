@@ -100,12 +100,12 @@ We will use the ReSharper plugin to reduce the amount of friction when running t
 
 ReSharper can be installed via the Visual Studio Extensions and Updates manager, or the ReSharper download site.
 
-<img width="440" alt="screen shot 2016-07-28 at 11 58 00 am" src="https://cloud.githubusercontent.com/assets/4039018/17221732/9d206eaa-54ba-11e6-816f-d600d0206f23.png">
+<img width="800" alt="screen shot 2016-07-28 at 11 58 00 am" src="https://cloud.githubusercontent.com/assets/4039018/17221732/9d206eaa-54ba-11e6-816f-d600d0206f23.png">
 
 Verify ReSharper is installed by verifying a "ReSharper" item appears in the menu.
 
-<img width="440" alt="screen shot 2016-07-28 at 12 00 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17221762/d98175ce-54ba-11e6-9f07-9f23f887b9d5.png">
+<img width="700" alt="screen shot 2016-07-28 at 12 00 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17221762/d98175ce-54ba-11e6-9f07-9f23f887b9d5.png">
 
 Verify the ReSharper test runner is enabled by opening a test class (example: `Example/Example.Test/FeedsWalrusTest.cs`) and verifying the circular "click to run" icon appears on the left side:
 
-<img width="440" alt="screen shot 2016-07-28 at 12 05 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17222036/f6730232-54bb-11e6-9383-ffcafecc04ba.png">
+<img width="600" alt="screen shot 2016-07-28 at 12 05 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17222036/f6730232-54bb-11e6-9383-ffcafecc04ba.png">
