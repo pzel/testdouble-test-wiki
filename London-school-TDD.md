@@ -8,28 +8,15 @@ I can't speak for the [GOOS](http://www.growing-object-oriented-software.com)'s 
 
 London-school TDD is a name given to an approach to using test-driven development to build systems that consistently arrive at clean, minimal designs of small, focused units of code (for more, see [[Tests' Influence on Design]]). It shares many characteristics with [[Detroit-school TDD]], but differs significantly enough to warrant conceptualizing it as a separate methodology. Moreover, many terms and concepts familiar in [[Detroit-school|Detroit-school TDD]] are commonly overloaded when discussing London-school testing, which has been the source of endless confusion among developers. 
 
-At its most basic, the workflow aims to systematically reduce a problem's complexity into small and sensible component parts from the outside-in:
-
-1. Identify the entry-point of the feature to-be-developed (e.g. an HTTP controller action), noting the inputs available and the desired output (or side effect)
-2. Create a test for a yet-unwritten domain object with a method-signature that would satisfy the top-level needs identified at the entry-point (the top-level domain object acts as [[scar tissue]] between the domain and the framework or runtime)
-3. Instead of attempting to immediately implement a solution, try to imagine 2-4 dependencies that could break the work up for the [[subject]] into logical sub-problems
-4. Create [[test doubles|test double]] for each of these dependencies and provide them to the [[subject]] (dependency injection is common here, but the approach varies by language ecosystem)
-5. Implement a test that specifies and enforces the appropriate interaction of the dependencies (often a chain of [[stubs||stub]] for each dependency, potentially [[mocking|mock]] or [[spying|spy]] the final one if the top-level desired behavior is a side-effect)
-6. Once the test passes, recurse by repeating steps 2-5 for each dependency; once a dependency's work can no longer be reasonably broken down, implement it as you would a pure function with [[Detroit-school TDD]]
-7. Once all of the dependencies specified in all of the tests have been implemented, invoke the initial top-level domain object from the entry-point and verify it works as intended
-
-A few consistent themes emerge from practicing this workflow:
-* A [sense of surprise](http://michaelfeathers.typepad.com/michael_feathers_blog/2008/06/the-flawed-theo.html) that everything works on the first attempt when it's finally invoked in production
-* Working outside-in to recurse through each dependency results in a easy-to-conceptualize tree of units for every feature
-* Minimizing the depth of the tree and maximizing the number of leaf nodes is desirable, because pure functions are easier to understand, test, and reuse
-
-Because a London-school unit test suite only provides regression safety of each unit in isolation, it's typically necessary to have a second, minimal suite of [[SAFE tests|SAFE test]] that validates the system works when everything is wired up and integrated. It's that integrated test which buys the developers the luxury of writing tightly focused isolation tests of each unit.
+Because a London-school unit test suite only provides regression safety of each unit in isolation, it's typically necessary to have a second, minimal suite of [[end-to-end tests|SAFE test]] that validate the system works when everything is wired up and integrated. It's that integrated test which buys the developers the luxury of writing tightly focused isolation tests of each unit.
 
 ## Comparison to Detroit-school TDD
 
-### Emphasis on test doubles
+Many comparisons between the two schools of thinking can be summarized as "top-down" versus "bottom-up". Where London-school TDD encourages programmers to use external constraints as a starting point (an API endpoint, an HTTP controller, etc.), Detroit-school TDD encourages programmers to first identify the core domain logic that exemplifies the work without concern for how it might be integrated elsewhere.
 
-**TODO**
+Typically, systems designed with Detroit-school TDD demonstrate greater emphasis on [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern), [object-oriented design](https://en.wikipedia.org/wiki/Object-oriented_design), and [domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design). The greatest risk posed by this approach is [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) resulting from APIs that wind up being a poor fit for the integrated code that would actually call it (e.g. mismatched parameters, differing return types, etc.)
+
+Whereas systems written with a Detroit-school TDD method might demonstrate a number of creative patterns of object design & organization, systems designed with London-school TDD tend to produce very homogeneous trees of objects and functions of a handful of types (collaborators which interact with subordinate dependencies, pure functions, wrappers of third-party code, and value types). London-school TDD is commonly referred to as a gateway drug to functional programming, because it encourages separating code with side effects and maximizing pure functions. 
 
 ### Design influence on implementations
 
@@ -37,31 +24,14 @@ An interesting consequence of practicing London-school TDD is that the design of
 
 The reason that London-school TDD can influence the design of the implementation is because unit tests have far more awareness of the [[subject]]'s dependencies and their interactions. In [[Detroit-school|Detroit-school TDD]], if an "object is hard to test, then it's hard to use"; in London-school, if a "dependency is hard to mock, then it's definitely hard to use for the object that'll actually be using it." Put differently, Detroit-school TDD can only provide feedback about how comfortable it is to use an API in the sometimes contrived circumstance of a unit test, whereas London-school TDD routinely provides feedback about whether each unit's usage is awkward under real-world conditions.
 
-***
-**TODO**: separate article or inline for discussion of discovery testing trees and unit types?
-
-* Collaborator
-* Signaler
-* Value
-* Logic (leaf-nodes)
-***
-
 ### Increased refactoring cost
 
 A common criticism of London-school test suites is that the cost to refactor implementations of a unit is increased. 
 
 While unit types whose tests don't use [[test doubles|test double]] (like Value and Logic units) are no different to refactor than Detroit-school units, types with mocked-out dependencies (like Collaborator and Signaler) require significantly more effort to refactor significantly. In general, attempting to refactor the implementation without changing the test first 
 
-Workflows derived from the London-school, like [[Discovery Testing]], compensate for this added cost by de-emphasizing refactoring; whenever a change needs to be made that will impact the contract between a unit and its dependencies, Discovery Testing suggests deleting the unit and its entire sub-tree of dependencies (along with their tests) and test-driving a fresh implementation with the new requirements in mind.
+Because many [[collaboration tests|Collaboration Test]] use [[test doubles|test double]] to specify the contract of a dependency, the cost of refactoring a design is sometimes dramatically increased (which is why [[Discovery Testing]] encourages targeted rewrites instead, with refactoring as an exceptional activity).
 
-### De-emphasis on regression safety
+Related Topics:
 
-Any test of a unit that replaces dependencies with [[test doubles|test double]] cannot be trusted to provide confidence that the [[subject]] and the dependencies beneath it will work in a real-world context. Meanwhile, the tests of Value and Logic units can be counted on to fully cover their implemented behavior, since their tests will be under realistic conditions.
-
-### Outside-in
-
-**TODO**
-
-### Wrapping third-party dependencies
-
-**TODO**: The phrase "don't mock what you don't own".
+* [[Don't Mock What You Don't Own]]
