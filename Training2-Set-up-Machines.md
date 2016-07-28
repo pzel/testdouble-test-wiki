@@ -86,7 +86,18 @@ visit `Preferences` -> `Java` -> `Editors` -> `Save Actions` and tick "Perform t
 
 There is preconfigured project that we will work from. Pull it down and verify it works on your machine by following the instructions in their README files:
 
-* [C# Xunit testing project](https://github.com/testdouble/csharp-xunit-example)
+* [csharp-xunit-example](https://github.com/testdouble/csharp-xunit-example)
+
+Once you've opened the top-level solution, you'll see that it defines a number of child projects that we'll work from over the course of the week:
+
+* [Example](https://github.com/testdouble/csharp-xunit-example/tree/master/Example) - a sandbox for ad hoc exercises
+* [Greeting](https://github.com/testdouble/csharp-xunit-example/tree/master/Greeting) - a project for practicing the [[Greeting Kata]]
+* [UnusualSpending](https://github.com/testdouble/csharp-xunit-example/tree/master/UnusualSpending) - a project for practicing the [[Unusual Spending Kata]]
+* [ExampleCucumber](https://github.com/testdouble/csharp-xunit-example/tree/master/ExampleCucumber) - a sandbox for writing cucumber examples
+* [BankOCR](https://github.com/testdouble/csharp-xunit-example/tree/master/BankOCR) - a project for using Cucumber to practice the [[Bank OCR Kata|Bank OCR Kata in Cucumber]]
+* [Selenium](https://github.com/testdouble/csharp-xunit-example/tree/master/Selenium) - a project for practicing writing Xunit and Cucumber tests with Selenium
+* [GildedRose](https://github.com/testdouble/csharp-xunit-example/tree/master/GildedRose) - a project for practicing the [[Gilded Rose Kata]]
+* [GameOfLife](https://github.com/testdouble/csharp-xunit-example/tree/master/GameOfLife) - a project to work from for a [[Code Retreat]]
 
 ### IDE
 
