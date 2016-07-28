@@ -1,8 +1,17 @@
-The [gilded-rose kata](https://github.com/emilybache/GildedRose-Refactoring-Kata) ([based on this article](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/)) is designed to practice characterizing legacy code with tests before adding additional tests to make changes.
+## Goal
 
-Including [Jim Weirich](https://en.wikipedia.org/wiki/Jim_Weirich)'s [formatted text of the original kata](https://github.com/jimweirich/gilded_rose_kata#original-description-of-the-gilded-rose) below:
+The [gilded-rose kata](https://github.com/emilybache/GildedRose-Refactoring-Kata) ([based on this article](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/)) is designed to practice rescuing legacy code safely by writing a robust characterization test, refactoring the code into well-designed units, and then backfilling those units with more focused tests.
 
-# Original Description of the Gilded Rose
+For more information on working with legacy code, check out [[Refactoring Legacy code with tests]].
+
+## Source code
+
+* [Java](https://github.com/testdouble/java-testing-example/tree/master/gilded-rose)
+* [Other languages](https://github.com/emilybache/GildedRose-Refactoring-Kata)
+
+## Requirements
+
+What follows is [Jim Weirich](https://en.wikipedia.org/wiki/Jim_Weirich)'s [formatted text of the original kata](https://github.com/jimweirich/gilded_rose_kata#original-description-of-the-gilded-rose):
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn
 with a prime location in a prominent city run by a friendly innkeeper
@@ -49,8 +58,3 @@ you). Your work needs to be completed by Friday, February 18, 2011
 Just for clarification, an item can never have its Quality increase
 above 50, however "Sulfuras" is a legendary item and as such its
 Quality is 80 and it never alters.
-
-## Source code
-
-* [Java](https://github.com/testdouble/java-testing-example/tree/master/gilded-rose)
-* [Other languages](https://github.com/emilybache/GildedRose-Refactoring-Kata)
