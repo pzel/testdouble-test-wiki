@@ -1,3 +1,20 @@
+Discovery Testing descends from [[London-school TDD]] to provide a very specific workflow for using the test-driven development to arrive at working designs composed of small, well-named units. As a side effect of that workflow, it encourages factoring object-oriented code into pure functions, discourages code reuse, and promotes rewriting in-the-small.
+
+## Encouraging pure functions
+
+## Discouraging code reuse
+
+## Small, regular rewrites
+
+Nobody likes undertaking Big Epic Rewrites, but as organizations change and grow, the code's imbued knowledge of the domain it serves tends to become increasingly outdated. Some people try to address this tension with rigor: refactor names and designs continuously whenever making a change. Others try to guard against it with infrastructure: write micro-services that will be discarded and replaced when they no longer suit their purpose.
+
+Discovery testing takes a different tack to modernizing our understanding of the code base: encouraging targeted rewrites (as opposed to merely refactors) when requirements change substantially. It represents a sort of [controlled burn](https://en.wikipedia.org/wiki/Controlled_burn) for monolithic system architectures.
+
+
+
+---
+
+
 At its most basic, the workflow aims to systematically reduce a problem's complexity into small and sensible component parts from the outside-in:
 
 1. Identify the entry-point of the feature to-be-developed (e.g. an HTTP controller action), noting the inputs available and the desired output (or side effect)
@@ -20,4 +37,3 @@ Workflows derived from the London-school, like [[Discovery Testing]], compensate
 ### De-emphasis on regression safety
 
 Any test of a unit that replaces dependencies with [[test doubles|test double]] cannot be trusted to provide confidence that the [[subject]] and the dependencies beneath it will work in a real-world context. Meanwhile, the tests of Value and Logic units can be counted on to fully cover their implemented behavior, since their tests will be under realistic conditions.
-
