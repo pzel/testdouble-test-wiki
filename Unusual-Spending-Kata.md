@@ -1,13 +1,23 @@
-(This kata is designed to practice [[London-school TDD]].)
+## Goal
 
-You work at a credit card company and as a value-add they want to start providing alerts to users when their spending in any particular category is higher than usual.
+The goal of this kata is to practice [[Discovery Testing]]. That is, after understanding all the requirements, to follow this workflow:
+
+1. Start with a [[Collaboration Test]] of the feature's entry point method (provided as `spending.TriggersUnusualSpendingEmail#trigger`), using it to identify 2-4 new classes that could be used to break the problem down
+2. Recurse into one of those newly-created classes, determining whether it should be broken down further:
+  1. if it can be broken down further, write a [[Collaboration Test]] for it, identifying more [[Behaviors|Behavioral Objects]], [[Values|Value Object]], and [[Wrappers|Wrapper Object]]
+  2. if it can be implemented cleanly as a simple [pure function](https://en.wikipedia.org/wiki/Pure_function), write a [[Regression Test]] to specify and ensure its individual behavior
+  3. if it merely needs to delegate to a third party function, write a [[Wrapper|Wrapper Object]] for it and don't bother unit testing the wrapper
+3. Repeat **Step 2** until you've implemented a complete solution
 
 ## Requirements
 
+You work at a credit card company and as a value-add they want to start providing alerts to users when their spending in any particular category is higher than usual.
+
 * A `Payment` is a simple value object with a `price`, `description`, and `category`
 * A `Category` is an enumerable type of a collection of things like "entertainment", "restaurants", and "golf"
-* Compare the payments for the current month and previous month, grouped by the total prices by category; flag the categories for which the user spent at least 50% more this month than last month
-* Compose an e-mail message to the user that lists the spending categories for which spending was unusually high, with a subject like "Unusual spending of $1076 detected!" and this body:
+* For a given `userId`, fetch the payments for the current month and the previous month
+* Compare the total amount paid for the each month, grouped by category; filter down to the categories for which the user spent at least 50% more this month than last month
+* Compose an e-mail message to the user that lists the categories for which spending was unusually high, with a subject like "Unusual spending of $1076 detected!" and this body:
 ```
 Hello card user!
 
@@ -21,36 +31,28 @@ Love,
 The Credit Card Company
 ```
 
-## Periphery of the app
+## Source code
 
-Suppose that a few pieces are either already built for you or will be provided by other teams in your organization, namely:
+Starter projects for the kata are available here:
 
-* The scheduling daemon that triggers the job is handled separately. So long as you implement an entry point with a `trigger(userId)` function, the scheduler will be able to fire the job
-* Another team will provide an API access function for fetching the payments for a particular user, year, and month, but it's not implemented yet (and the method signature might change), so wrap the provided class with an object you own and stub it. It currently looks like this:
-``` java
-package com.spending.thirdparty;
+* [Java](https://github.com/testdouble/java-testing-example/tree/master/unusual-spending)
+* [Node.js](https://github.com/testdouble/unusual-spending) (note that its example contracts and types differ from those here)
 
-import java.util.Set;
-import com.spending.values.Payment;
+## Caveats
 
-public class FetchesUserPaymentsByMonth {
-  public static Set<Payment> fetch(long userId, int year, int month) {
-    throw new RuntimeException("Data access will be implemented by a different team later");
-  }
-}
-```
-* Another team will provide a method for sending e-mails to a particular user for you, but since you don't control it, wrap it with an adapter and spy on that adapter instead; it currently looks like:
-``` java
-package com.spending.thirdparty;
+Like most applications that developers are paid to write, this kata tasks the programmer to implement just one layer of an overall solution, meaning there are a number of important facets we can't control:
 
-public class EmailsUser {
-  public static void email(long userId, String subject, String body) {
-    throw new RuntimeException("Email will be implemented by a different team later");
-  } 
-}
-```
+* We don't control who invokes our `TriggersUnusualSpendingEmail#trigger(userId)` entry point, or when; nor can we change its method signature, as it represents a public interface that something else (maybe a job scheduler system) is depending on
+* We don't control how payments are fetched, that's Somebody Else's Job™; all we have is an agreed-upon contract: `spending.FetchesUserPaymentsByMonth#fetch(userId, year, month)`
+* We don't control how e-mails are sent, all we know is that it's specified by the interface `spending.EmailsUser.email(userId, subject, body)`
+* Instances of `FetchesUserPaymentsByMonth` are provided by a factory method, which would be painful to mock and means we'll want to write a [[Wrapper Object]] for it
+* `EmailsUser.email` is a static method, which is also painful to mock and we'll want to [[wrap|Wrapper Object]] it, too 
 
-## After you're done…
+For more on mocking and external constraints, be sure to read [[Don't mock what you don't own]].
+
+Making forward-progress on our work while dealing with constraints like this are part-and-parcel of being a productive professional programmer. [[Discovery Testing]] is designed to enable that productivity by helping us write well-designed and well-tested code that's narrowly focused on the things within our control.
+
+## Extra Credit
 
 Once you've completed the kata, if you'd like to test your approach for how easy it is to change, try these requested requirement changes:
 
