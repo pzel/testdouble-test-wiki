@@ -4,10 +4,19 @@ Attendees of this course may use either Java & Eclipse or C# & Visual Studio. De
 
 ### Source code
 
-There are two preconfigured projects that we will work from: one for unit tests and one for browser tests. Pull down both and verify they work on your machine by following the instructions in their README files:
+There is a preconfigured project that we will work from. Download it and verify everything works on your machine by following the instructions in its README files:
 
-* [a simple JUnit project](https://github.com/testdouble/java-junit-example) 
-* [a Cucumber and Selenium project](https://github.com/testdouble/java-cucumber-example)
+* [java-testing-example](https://github.com/testdouble/java-testing-example) 
+
+Once you've imported and installed the top-level project, you'll see that it defines a number of child projects that we'll work from over the course of the week:
+
+* [example](https://github.com/testdouble/java-testing-example/tree/master/example) - a sandbox for ad hoc exercises
+* [greeting](https://github.com/testdouble/java-testing-example/tree/master/greeting) - a project for practicing the [[Greeting Kata]]
+* [unusual-spending](https://github.com/testdouble/java-testing-example/tree/master/unusual-spending) - a project for practicing the [[Unusual Spending Kata]] (this [vendor](https://github.com/testdouble/java-testing-example/tree/master/unusual-spending-vendor) project supports it)
+* [example-cucumber](https://github.com/testdouble/java-testing-example/tree/master/example-cucumber) - a sandbox for writing cucumber examples
+* [bank-ocr](https://github.com/testdouble/java-testing-example/tree/master/bank-ocr) - a project for using Cucumber to practice the [[Bank OCR Kata|Bank OCR Kata in Cucumber]]
+* [todo-app](https://github.com/testdouble/java-testing-example/tree/master/todo-app) - a project for practicing writing JUnit and Cucumber tests with Selenium
+* [game-of-life](https://github.com/testdouble/java-testing-example/tree/master/game-of-life) - a project to work from for a [[Code Retreat]]
 
 ### IDE Plugins
 
