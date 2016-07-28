@@ -6,7 +6,7 @@ Attendees of this course may use either Java & Eclipse or C# & Visual Studio. De
 
 There is a preconfigured project that we will work from. Download it and verify everything works on your machine by following the instructions in its README files:
 
-* [java-testing-example](https://github.com/testdouble/java-testing-example) 
+* [java-testing-example](https://github.com/testdouble/java-testing-example)
 
 Once you've imported and installed the top-level project, you'll see that it defines a number of child projects that we'll work from over the course of the week:
 
@@ -65,9 +65,9 @@ When working on a multi-project Maven module or a working set, you can group tho
 
 <img width="660" alt="screen shot 2016-07-27 at 9 55 10 am" src="https://cloud.githubusercontent.com/assets/79303/17177939/82a06aaa-53e1-11e6-83f3-fb52251976c6.png">
 
-#### Autosave 
+#### Autosave
 
-When juggling a lot of files, switching tabs after forgetting to manually save can cause needless disruption to one's workflow—debugging only to realize the root cause was that a file wasn't saved can be really frustrating! 
+When juggling a lot of files, switching tabs after forgetting to manually save can cause needless disruption to one's workflow—debugging only to realize the root cause was that a file wasn't saved can be really frustrating!
 
 To configure Eclipse (4.6 & later) to autosave dirty editors, visit `Preferences` -> `General` -> `Editors` -> `Autosave` and enable autosave for dirty editors. Unless you have a slow build and "build automatically" enabled, reduce the default 20 second timer to something shorter (I have mine set to 1 second here):
 
@@ -75,9 +75,37 @@ To configure Eclipse (4.6 & later) to autosave dirty editors, visit `Preferences
 
 #### Auto-format
 
-To reduce whitespace commits, it can be helpful to auto-format & auto-organize imports on stage. To set it up, 
+To reduce whitespace commits, it can be helpful to auto-format & auto-organize imports on stage. To set it up,
 visit `Preferences` -> `Java` -> `Editors` -> `Save Actions` and tick "Perform the selected actions on save", along with "Format source code" and "Organize imports"
 
 <img width="760" alt="screen shot 2016-07-28 at 11 05 35 am" src="https://cloud.githubusercontent.com/assets/79303/17217701/45c63ccc-54b3-11e6-9462-0a6d50b02e4f.png">
 
 ## C&#35;
+
+### Source code
+
+There is preconfigured project that we will work from. Pull it down and verify it works on your machine by following the instructions in their README files:
+
+* [C# Xunit testing project](https://github.com/testdouble/csharp-xunit-example)
+
+### IDE
+
+This setup assumes you're using Visual Studio 2015. Setup for earlier versions may vary.
+
+### Visual Studio Plugins
+
+We will use the ReSharper plugin to reduce the amount of friction when running tests inside Visual Studio:
+
+* [ReSharper](https://www.jetbrains.com/resharper/download/#)
+
+ReSharper can be installed via the Visual Studio Extensions and Updates manager, or the ReSharper download site.
+
+<img width="440" alt="screen shot 2016-07-28 at 11 58 00 am" src="https://cloud.githubusercontent.com/assets/4039018/17221732/9d206eaa-54ba-11e6-816f-d600d0206f23.png">
+
+Verify ReSharper is installed by verifying a "ReSharper" item appears in the menu.
+
+<img width="440" alt="screen shot 2016-07-28 at 12 00 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17221762/d98175ce-54ba-11e6-9f07-9f23f887b9d5.png">
+
+Verify the ReSharper test runner is enabled by opening a test class (example: `Example/Example.Test/FeedsWalrusTest.cs`) and verifying the circular "click to run" icon appears on the left side:
+
+<img width="440" alt="screen shot 2016-07-28 at 12 05 00 pm" src="https://cloud.githubusercontent.com/assets/4039018/17222036/f6730232-54bb-11e6-9383-ffcafecc04ba.png">
