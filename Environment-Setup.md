@@ -39,6 +39,10 @@ Verify Natural is installed by opening a Cucumber feature file (example: `bank-o
 
 ### IDE Settings
 
+#### New test templates
+
+To reduce the friction when creating a new unit test, consider configuring these [[new test templates]] as code snippets to be activated using Eclipse auto-completion.
+
 #### Download source & docs
 
 By default, Eclipse will only fetch compiled dependencies, but not the source attachments or JavaDoc. Doing so adds little overhead and allows you to navigate to and read the code you depend on with a simple ctrl-click. Just visit `Preferences` -> `Maven` and checking `Download Artifact Sources` and `Download Artifact JavaDoc`
