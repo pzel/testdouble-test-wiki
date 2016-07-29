@@ -1,4 +1,4 @@
-_This is a pre-survey for a multi-day training from [Test Double](http://testdouble.com). [Contact us](mailto:hello+training@testdouble.com) if you'd like more information._
+> _This is a pre-survey for a multi-day training from [Test Double](http://testdouble.com). [Contact us](mailto:hello+training@testdouble.com) if you'd like more information._
 
 Welcome! To get things started off, everyone please take four index cards and a marker. In large print, answer these questions (each on their own card):
 
