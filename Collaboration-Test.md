@@ -2,7 +2,9 @@ In [[Discovery Testing]], a [[Collaborator Object]] describes any unit of code w
 
 When practicing [[Discovery TDD|Discovery Testing]], a developer typically starts with a new collaboration test and asks "if several components could be composed to solve this problem, what would those components be?"
 
-Let's look at an example. Suppose we're building a treehouse. We might start with a test that invokes this function under test:
+## Example walkthrough of a collaboration test
+
+Let's look at an example in JavaScript. Suppose we're building a treehouse. We might start with a test that invokes this function under test:
 
 ``` javascript
 var subject = new TreeHouseBuilder()
@@ -40,4 +42,46 @@ assert(result instanceof TreeHouseWithRailings)
 _[Of course, passing function references around like this seems a bit ham-fisted, which is why testdouble.js provides less obtrusive ways to [replace dependencies with test doubles](https://github.com/testdouble/testdouble.js/blob/master/docs/7-replacing-dependencies.md#replacing-real-dependencies-with-test-doubles).]_
 
 If we ran this test, even in its incomplete state, we'd get several rounds of initial feedback via messages like `TreeHouseBuilder is not defined`, then (after defining it) `subject.build is not a function`, then (after defining _it_) `TreeHouseWithRailings is not defined`. Once clearing these messages, we get to what might be called the "logical" or "intended" failure of `AssertionError: false == true`.
+
+Now we have to think about how the subject would invoke these three things to ultimately return a `TreeHouseWithRailings`. We accomplish this with configuring [[stubbings|stub]] on the test doubles. 
+
+A stubbing looks like this:
+
+```js
+var tree = new Tree()
+td.when(chooseTree()).thenReturn(tree)
+```
+
+Where `td.when` is used to configure the test double `chooseTree` to return a particular `tree` when it's invoked with no arguments.
+
+Filling out the rest of the stubbing setup also typically shakes out several value types, namely `Tree`, `TreeHouse`:
+
+```js
+var chooseTree = td.function('chooseTree')
+var buildPlatform = td.function('buildPlatform')
+var addRailings = td.function('addRailings')
+var subject = new TreeHouseBuilder(chooseTree, buildPlatform, addRailings)
+var tree = new Tree()
+td.when(chooseTree()).thenReturn(tree)
+var treeHouse = new TreeHouse()
+td.when(buildPlatform(tree)).thenReturn(treeHouse)
+var treeHouseWithRailings = new TreeHouseWithRailings()
+td.when(addRailings(treeHouse)).thenReturn(treeHouseWithRailings)
+
+var result = subject.build()
+
+assert(result instanceof TreeHouseWithRailings)
+```
+
+Additionally, we can make the assertion more specific now that we have greater control over how the test doubles behave. Instead of a heuristic assertion based on `instanceof`:
+
+```js
+assert(result instanceof TreeHouseWithRailings)
+```
+
+We can assert that the tree house with railings that is returned is the _exact_ one that `addRailings` has been stubbed to respond with when passed the exact `treehouse` that was built:
+
+```js
+assert.equal(result, treeHouseWithRailings)
+```
 
