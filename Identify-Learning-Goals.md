@@ -10,4 +10,4 @@ Welcome! To get things started off, everyone please take four index cards and a 
 
 Once everyone is present and fills their cards, we'll circle up and present our cards to each other and discuss our hopes and fears for the week. I'll do my very best to be mindful of both, and also make a point that everything people want to learn is addressed.
 
-While you're waiting for your colleagues, clone this [sample project repo](https://github.com/searls/java-testing-example), which we'll use for the next couple days. If you find yourself with extra time waiting, feel free to double-check that you can get it running.
+While you're waiting for your colleagues, feel free to get started with your [[Environment Setup]].
