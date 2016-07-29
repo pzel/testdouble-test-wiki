@@ -1,3 +1,5 @@
+_Disambiguation: are you perhaps looking for [Test Double](http://testdouble.com), the software agency that created this wiki?_
+
 "Test Double" is the broadest term available to describe any fake thing introduced in place of a real thing for the purpose of writing an automated test. The name is derived from the term "[Stunt Double](https://en.wikipedia.org/wiki/Stunt_double)", to evoke the sense of an artificial, but suitable stand-in for the real thing.
 
 There are several sub-types of test doubles, but because most tools do a poor job either following a conventional nomenclature or providing test double utilities that adhere to only one sub-type, it's more useful to think of the various types of test doubles as various _intentional behaviors_ that test doubles may exhibit. These include:
