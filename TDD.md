@@ -2,5 +2,4 @@ TDD stands for "[test-driven development](https://en.wikipedia.org/wiki/Test-dri
 
 * The term came to prominence thanks to Kent Beck, so if you're looking for an "official" definition, check out [his book](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
 * To try to summarize things, this wiki attempts to split the TDD world (with very broad strokes) into two hemispheres: [[Detroit-school TDD]] & [[London-school TDD]]
-* [[Discovery Testing]] is an iteration on the ideas from the [[London-school TDD|London-school]] and this wiki is heavily biased in its favor, in part because it's so little known
-
+* [[Discovery Testing]] is an iteration on the ideas from the [[London-school|London-school TDD]] and this wiki is heavily biased in its favor, in part because it's so little known
