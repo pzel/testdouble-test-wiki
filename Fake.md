@@ -1,0 +1,3 @@
+A fake is a [[test double]] that provides an alternate implementation of a real thing for the purpose of a test. The term "fake" is often used to discriminate a test double from "any test double generated and configured by a mocking library", but doesn't necessarily have to resemble a "hand-rolled" test double inside a test.
+
+A classic example of a fake would be an object that implements a trivial in-memory database to be used in place of a connection to a real database, whether to improve ease of test data setup or a test's runtime speed.
