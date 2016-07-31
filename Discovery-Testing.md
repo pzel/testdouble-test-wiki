@@ -12,7 +12,9 @@ Any test of a unit that replaces dependencies with [[test doubles|test double]] 
 
 ### Encouraging pure functions
 
-TODO
+Quite a few functional programmers have been quick to realize that Discovery Testing implies a rejection of traditional Object-oriented programming. By splitting [[value objects|Value object]] from [[collaborator objects|Collaborator object]] and [[leaf nodes|leaf node]], units that describe data are generally not intertwined with units that encode application logic. When combined with the [reductionist](https://en.wikipedia.org/wiki/Reductionism) goal of shaking out as many pure function [[leaf nodes|leaf node]] as possible, [[collaborators|collaborator objects]] start to serve the same role as [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function) in functional programming.
+
+Object-oriented programming languages, concepts, and jargon are still dominant in the industry. Discovery Testing seeks to provide a path for developers to take advantage of several of its benefits without leaving the comfort zone provided by their object-oriented ecosystem.
 
 ### Discouraging code reuse
 
