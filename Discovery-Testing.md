@@ -2,7 +2,25 @@
 
 Discovery Testing descends from [[London-school TDD]] to provide a very specific workflow for using the test-driven development to arrive at working designs composed of small, well-named units. As a side effect of that workflow, it encourages factoring object-oriented code into pure functions, discourages code reuse, and promotes rewriting in-the-small.
 
+Discovery Testing prescribes a recursive workflow for TDD, seeking to defining a tree of objects to implement a feature:
 
+1. Start by identifying an entry point and writing a [[collaboration test]] of it
+2. For each dependency the first collaboration test identifies:
+  1. if it needs to be broken down further, write another [[collaboration test]] for it (e.g. `GOTO 1`)
+  2. if its task is a straightforward data transformation, implement it as a pure-function [[leaf node]]
+  3. if its task requires interaction with a third-party, implement a [[wrapper object]]
+
+By recursing through the trees that emerge from following the above steps, most typical application development tasks can be accomplished.
+
+All-the-while, any [[value objects|value object]] that are identified when specifying the contract between a [[collaborator object]] and its dependencies are tracked separately, aside from the tree (i.e. the values represent the fluid flowing through the pipes described by the tree of behavioral objects the tree represents).
+
+## Tutorials
+
+For a deeper dive, these videos & screencasts describe Discovery Testing in greater detail:
+
+* [My favorite way to TDD](http://blog.testdouble.com/posts/2015-09-10-how-i-use-test-doubles.html) (3h30m in 4 parts), implementing [[Game of Life]] in Java
+* [Happier TDD with testdouble.js](http://blog.testdouble.com/posts/2016-06-05-happier-tdd-with-testdouble-js.html) (20m), JavaScript-focused
+* [Mock objects in Discovery Testing](http://blog.testdouble.com/posts/2014-05-14-mock-objects-in-discovery-tests.html)
 
 ## Implications of Discovery Testing
 
@@ -40,36 +58,3 @@ Discovery Testing breaks from the [[Detroit-school|Detroit-school TDD]] mantra o
 Nobody likes undertaking Big Epic Rewrites, but as organizations change and grow, the code's imbued knowledge of the domain it serves tends to become increasingly outdated. Some people try to address this tension with rigor: refactor names and designs continuously whenever making a change. Others try to guard against it with infrastructure: write micro-services that will be discarded and replaced when they no longer suit their purpose.
 
 Discovery testing takes a different tack to modernizing our understanding of the code base: encouraging targeted rewrites (as opposed to merely refactors) when requirements change substantially. It represents a sort of [controlled burn](https://en.wikipedia.org/wiki/Controlled_burn) for monolithic system architectures.
-
-
-
----
-
-
-At its most basic, the workflow aims to systematically reduce a problem's complexity into small and sensible component parts from the outside-in:
-
-1. Identify the entry-point of the feature to-be-developed (e.g. an HTTP controller action), noting the inputs available and the desired output (or side effect)
-2. Create a test for a yet-unwritten domain object with a method-signature that would satisfy the top-level needs identified at the entry-point (the top-level domain object acts as [[scar tissue]] between the domain and the framework or runtime)
-3. Instead of attempting to immediately implement a solution, try to imagine 2-4 dependencies that could break the work up for the [[subject]] into logical sub-problems
-4. Create [[test doubles|test double]] for each of these dependencies and provide them to the [[subject]] (dependency injection is common here, but the approach varies by language ecosystem)
-5. Implement a test that specifies and enforces the appropriate interaction of the dependencies (often a chain of [[stubs||stub]] for each dependency, potentially [[mocking|mock]] or [[spying|spy]] the final one if the top-level desired behavior is a side-effect)
-6. Once the test passes, recurse by repeating steps 2-5 for each dependency; once a dependency's work can no longer be reasonably broken down, implement it as you would a pure function with [[Detroit-school TDD]]
-7. Once all of the dependencies specified in all of the tests have been implemented, invoke the initial top-level domain object from the entry-point and verify it works as intended
-
-A few consistent themes emerge from practicing this workflow:
-* A [sense of surprise](http://michaelfeathers.typepad.com/michael_feathers_blog/2008/06/the-flawed-theo.html) that everything works on the first attempt when it's finally invoked in production
-* Working outside-in to recurse through each dependency results in a easy-to-conceptualize tree of units for every feature
-* Minimizing the depth of the tree and maximizing the number of leaf nodes is desirable, because pure functions are easier to understand, test, and reuse
-
-
-
-Workflows derived from the London-school, like [[Discovery Testing]], compensate for this added cost by de-emphasizing refactoring; whenever a change needs to be made that will impact the contract between a unit and its dependencies, Discovery Testing suggests deleting the unit and its entire sub-tree of dependencies (along with their tests) and test-driving a fresh implementation with the new requirements in mind.
-
-
-## Resources
-
-For a deeper dive, these videos & screencasts describe Discovery Testing in greater detail:
-
-* [My favorite way to TDD](http://blog.testdouble.com/posts/2015-09-10-how-i-use-test-doubles.html) (3h30m in 4 parts), implementing [[Game of Life]] in Java
-* [Happier TDD with testdouble.js](http://blog.testdouble.com/posts/2016-06-05-happier-tdd-with-testdouble-js.html) (20m), JavaScript-focused
-* [Mock objects in Discovery Testing](http://blog.testdouble.com/posts/2014-05-14-mock-objects-in-discovery-tests.html)
