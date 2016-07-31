@@ -8,9 +8,7 @@ To add a new Java code template, open preferences to Java -> Editor -> Templates
 
 <img width="727" alt="screen shot 2016-07-26 at 9 39 37 am" src="https://cloud.githubusercontent.com/assets/79303/17140266/de85a082-5315-11e6-9e5a-229836adebd8.png">
 
-Next, give a name and paste in the template. The name will be picked up by Eclipse's auto complete feature (which defaults to the key-binding `ctrl-space`:
-
-<img width="604" alt="screen shot 2016-07-26 at 9 40 07 am" src="https://cloud.githubusercontent.com/assets/79303/17140300/ffc17294-5315-11e6-80bc-6e6e462848ec.png">
+Next, give a name and paste in the template. The name will be picked up by Eclipse's auto complete feature (which defaults to the key-binding `ctrl-space`). Read on for our recommended templates when creating a new test.
 
 ### Collaboration tests
 
