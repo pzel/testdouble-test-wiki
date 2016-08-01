@@ -5,7 +5,7 @@ This agenda describes at a very high-level a 5 day curriculum, but can easily be
 |         | Monday | Tuesday | Wednesday | Thursday | Friday |
 | ------  | ------ | ------- | --------- | -------- | ------ |
 | | Intro  |  Debrief |   Debrief   |  Debrief   | Debrief  |   
-| AM  | • Overview of course <br> • Identify Learning Goals <br> • Survey of Tools  | • [[One Good Test]] <br> • Roman Numeral Kata <br> • [[Detroit TDD|Detroit-school TDD]] | <br> • [[Test Suite Design]] • [[Don't mock what you don't own]] <br> • [[Bank OCR Kata in Cucumber]] | • [[Refactoring Legacy code with tests]] <br> • [[Gilded Rose Kata]] <br> • [[Frameworks|Testing and Application Frameworks]]  |  • Lightning Talks  <br> • Continuous Integration <br> • Quality automation |
+| AM  | • Overview <br> • [[Identify Learning Goals]] <br> • Survey of Tools  | • [[One Good Test]] <br> • Roman Numeral Kata <br> • [[Detroit TDD|Detroit-school TDD]] | <br> • [[Test Suite Design]] • [[Don't mock what you don't own]] <br> • [[Bank OCR Kata in Cucumber]] | • [[Refactoring Legacy code with tests]] <br> • [[Gilded Rose Kata]] <br> • [[Frameworks|Testing and Application Frameworks]]  |  • Lightning Talks  <br> • Continuous Integration <br> • Quality automation |
 | PM  | • [[Set up machines|Environment Setup]] <br> • Explain HelloWorld tests <br>  • [[One good test]] | • [[Test Doubles|Test Double]] <br> • [[Math Kata|Arithmetic Kata]] <br> • [[London TDD|London-school TDD]] <br> • [[Unusual Spending Kata]] | • [Selenium TODO test](http://testdouble.github.io/todos/) (with and without Cucumber) <br> • [[SAFE tests]] <br> • Controlling Test Data <br> • [[Web tests selecting on text]] | • [[Code Retreat]] | Open Spaces Discussion |
 |  | Retro  | Retro   | Retro     | Retro    | Retro  |
 
