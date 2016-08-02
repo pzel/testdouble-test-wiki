@@ -85,3 +85,8 @@ We can assert that the tree house with railings that is returned is the _exact_ 
 assert.equal(result, treeHouseWithRailings)
 ```
 
+## Other examples
+
+Here is another example of a collaboration test:
+
+* [in Java](https://github.com/testdouble/contributing-tests/wiki/Collaboration-Test-(Java))
