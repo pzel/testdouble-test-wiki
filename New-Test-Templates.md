@@ -139,8 +139,8 @@ namespace Example.Test {
             }
         }
 
-        public class GroupOne {
-            public GroupOne() {
+        public class GroupTwo {
+            public GroupTwo() {
                 // Setup for this group of tests
             }
 
