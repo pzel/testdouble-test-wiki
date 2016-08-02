@@ -4,6 +4,7 @@
     * [[Tests' Influence on Design]]
   * [[Discovery Testing]]
     * [[Collaboration Test]]
+      * [[in Java|Collaboration-Test-(Java)]]
 * [[Test Doubles|Test Double]]
   * [[Stub]]
   * [[Fake]]
