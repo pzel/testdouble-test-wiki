@@ -115,3 +115,79 @@ namespace $rootnamespace$ {
     }
 }
 ```
+
+### Categorizing Tests
+
+#### Nested Classes
+
+Grouping with nested classes will allow you to run tests for specific contexts
+or scenarios for a larger set of tests.
+
+```csharp
+using Xunit;
+
+namespace Example.Test {
+    public class ExampleTest {
+        public class GroupOne {
+            public GroupOne() {
+                // Setup for this group of tests
+            }
+
+            [Fact]
+            public void Test() {
+                Assert.Equal(1, 1)
+            }
+        }
+
+        public class GroupOne {
+            public GroupOne() {
+                // Setup for this group of tests
+            }
+
+            [Fact]
+            public void Test() {
+                Assert.Equal(2, 2)
+            }
+        }
+    }
+}
+```
+
+#### Traits
+
+Adding traits to tests will allow you to run only tests with a specific trait.
+
+```csharp
+using Xunit;
+
+namespace Example.Test {
+    public class ExampleTest {
+
+        [Fact]
+        [Trait("Feature", "One")]
+        public void TestOne() {
+            Assert.Equal(1, 1)
+        }
+
+        [Fact]
+        [Trait("Feature", "One")]
+        public void TestOne() {
+        public void TestTwo() {
+            Assert.Equal(2, 2)
+        }
+
+
+        [Fact]
+        [Trait("Feature", "Two")]
+        public void TestThree() {
+            Assert.Equal(3, 3)
+        }
+    }
+}
+```
+
+You can then run specific categories from the test runner:
+
+```
+.\packages\xunit.runner.console.2.1.0\tools\xunit.console .\Example.Test\bin\Debug\ExampleTest.dll -trait "Feature=One"
+```
