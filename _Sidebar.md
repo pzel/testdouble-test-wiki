@@ -5,7 +5,7 @@
   * [[Discovery Testing]]
     * [[Collaboration Test]]
       * [[in Java|Collaboration-Test-(Java)]]
-      * [[in C#|Collaboration-Test(C#)]]
+      * [[in C#|Collaboration-Test-(C#)]]
 * [[Test Doubles|Test Double]]
   * [[Stub]]
   * [[Fake]]

@@ -43,7 +43,7 @@ _[Of course, passing function references around like this seems a bit ham-fisted
 
 If we ran this test, even in its incomplete state, we'd get several rounds of initial feedback via messages like `TreeHouseBuilder is not defined`, then (after defining it) `subject.build is not a function`, then (after defining _it_) `TreeHouseWithRailings is not defined`. Once clearing these messages, we get to what might be called the "logical" or "intended" failure of `AssertionError: false == true`.
 
-Now we have to think about how the subject would invoke these three things to ultimately return a `TreeHouseWithRailings`. We accomplish this with configuring [[stubbings|stub]] on the test doubles. 
+Now we have to think about how the subject would invoke these three things to ultimately return a `TreeHouseWithRailings`. We accomplish this with configuring [[stubbings|stub]] on the test doubles.
 
 A stubbing looks like this:
 
@@ -90,4 +90,4 @@ assert.equal(result, treeHouseWithRailings)
 Here is another example of a collaboration test:
 
 * [[in Java|Collaboration-Test-(Java)]]
-* [[in C#|Collaboration-Test(C#)]]
+* [[in C#|Collaboration-Test-(C#)]]
