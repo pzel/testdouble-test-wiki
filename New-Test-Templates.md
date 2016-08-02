@@ -171,7 +171,6 @@ namespace Example.Test {
 
         [Fact]
         [Trait("Feature", "One")]
-        public void TestOne() {
         public void TestTwo() {
             Assert.Equal(2, 2)
         }
@@ -181,6 +180,15 @@ namespace Example.Test {
         [Trait("Feature", "Two")]
         public void TestThree() {
             Assert.Equal(3, 3)
+        }
+
+        // You can also apply traits to entire groups by using the trait on the class
+        [Trait("Feature", "One")]
+        public class WithASpecificSetup {
+            [Fact]
+            public void Test() {
+                Assert.Equal(1, 1)
+            }
         }
     }
 }
