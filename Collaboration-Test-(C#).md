@@ -46,3 +46,7 @@ namespace Example {
     }
 }
 ```
+
+## Moq
+
+See the [Moq Guide](https://github.com/Moq/moq4/wiki/Quickstart) for more information on mock setup and verification.
