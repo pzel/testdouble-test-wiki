@@ -89,4 +89,4 @@ assert.equal(result, treeHouseWithRailings)
 
 Here is another example of a collaboration test:
 
-* [in Java](https://github.com/testdouble/contributing-tests/wiki/Collaboration-Test-(Java))
+* [[in Java|Collaboration-Test-(Java)]]
