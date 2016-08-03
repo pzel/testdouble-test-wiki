@@ -58,3 +58,9 @@ Once you've completed the kata, if you'd like to test your approach for how easy
 
 * Load three months of payment history and compare the current month to their average totals by category (you're guaranteed to have the most recent month, but either of the two prior months might come back as empty sets, as if the user lacks the payment history)
 * Update the e-mail to report what the usual spending amount was, in addition to the unusual spending amount
+
+## Examples
+
+Here are some example "solutions" to the kata to get a sense for the sorts of object trees that might shake out of the exercise:
+
+* Java, 2016-08-03 ([Zip](https://github.com/testdouble/contributing-tests/releases/download/v0.0.1/unusual-spending-solution-java.zip) | [Pull request](https://github.com/testdouble/java-testing-example/pull/1))
