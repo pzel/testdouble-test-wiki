@@ -63,4 +63,4 @@ Once you've completed the kata, if you'd like to test your approach for how easy
 
 Here are some example "solutions" to the kata to get a sense for the sorts of object trees that might shake out of the exercise:
 
-* Java, 2016-08-03 ([Zip](https://github.com/testdouble/contributing-tests/releases/download/v0.0.1/unusual-spending-solution-java.zip) | [Pull request](https://github.com/testdouble/java-testing-example/pull/1))
+* Java, 2016-08-03 ([zip](https://github.com/testdouble/contributing-tests/releases/download/v0.0.1/unusual-spending-solution-java.zip) | [Pull request](https://github.com/testdouble/java-testing-example/pull/1))
