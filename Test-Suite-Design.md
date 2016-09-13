@@ -11,7 +11,7 @@ One way to overcome (or at least sidestep) each of these issues is to take a mor
 * A class of tests known to be slow or of incidental concern (e.g. an operation suite of tests that verify our assumptions about third-party APIs and services)
 * A fresh start that represents a clean break from an existing, similarly-motivated suite (i.e. it's very difficult to  unilaterally introduce focus, consistency, or speed once it is lost)
 * Tests that represent the interests of a particular stakeholder (e.g. a suite of browser-automation tests for admins and another one for regular users)
-* Tests that target varying layers of an application (e.g. a [[Detroit-school|Detroit-school TDD]] suite for an application's HTTP controllers and a [[London-school|London-school TDD]] suite for its domain objects
+* Tests that target varying layers of an application (e.g. a [[Detroit-school|Detroit-school TDD]] suite for an application's HTTP controllers and a [[London-school|London-school TDD]] suite for its domain objects)
 
 Ideally, each test suite should define the following traits:
 
