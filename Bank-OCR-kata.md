@@ -1,7 +1,6 @@
 # Bank OCR Kata
 
-This repo contains two Ruby solutions to the Bank OCR Kata defined at
-(http://www.codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
+This repo contains two Ruby solutions to the Bank OCR Kata (originally defined [here](http://www.codingdojo.org/cgi-bin/wiki.pl?KataBankOCR))
 
 The first solution is on the master branch. The master branch as the
 following tags:
