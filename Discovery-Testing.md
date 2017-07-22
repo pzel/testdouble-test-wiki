@@ -1,6 +1,6 @@
 ## Intro
 
-Discovery Testing descends from [[London-school TDD]] to provide a very specific workflow for using the test-driven development to arrive at working designs composed of small, well-named units. As a side effect of that workflow, it encourages factoring object-oriented code into pure functions, discourages code reuse, and promotes rewriting in-the-small.
+Discovery Testing descends from [[London-school TDD]] to provide a very specific workflow for using test-driven development to arrive at working designs composed of small, well-named units. As a side effect of that workflow, it encourages factoring object-oriented code into pure functions, discourages code reuse, and promotes rewriting in-the-small.
 
 Discovery Testing prescribes a recursive workflow for TDD, seeking to defining a tree of objects to implement a feature:
 
