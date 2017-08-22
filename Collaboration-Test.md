@@ -14,7 +14,7 @@ var result = subject.build()
 assert(result instanceof TreeHouseWithRailings)
 ```
 
-It would be foolish to try to implement everything to do with building a treehouse inside of a single method. A collaboration test differs doesn't presume we know _how_ to best do the job yet, but helps us focus on _what_ building a treehouse would entail. Brainstorming (and reading up [on treehouses](http://www.wikihow.com/Build-a-Treehouse)), we break it up into a few categories:
+It would be foolish to try to implement everything to do with building a treehouse inside of a single method. A collaboration test doesn't presume we know _how_ to best do the job yet, but helps us focus on _what_ building a treehouse would entail. Brainstorming (and reading up [on treehouses](http://www.wikihow.com/Build-a-Treehouse)), we break it up into a few categories:
 
 ```js
 var chooseTree
