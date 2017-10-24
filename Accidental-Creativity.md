@@ -7,4 +7,4 @@ Interpreting the author's intent when reading a test is often made unnecessarily
 * Symmetrical unit testing (i.e. placing the test in a directory listing that mirrors the subject and with a predictable name like `SubjectTest`)
 * Default to using [[meaningless test data]]
 * Instantiating and naming the [[subject]] and injecting [[test doubles|test double]] in the exact same way across tests
-* Using (or avoiding the use of) test utilities (e.g. [FactoryGirl](https://github.com/thoughtbot/factory_girl) or [VCR](https://github.com/vcr/vcr)) in a consistent manner for a group of tests
+* Using (or avoiding the use of) test utilities (e.g. [FactoryBot](https://github.com/thoughtbot/factory_bot) or [VCR](https://github.com/vcr/vcr)) in a consistent manner for a group of tests
