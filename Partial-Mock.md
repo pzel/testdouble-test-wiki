@@ -22,7 +22,11 @@ The short-term impact of using a partial mock is typically to salve over pain in
 
 The long-term impact of using a partial mock is mostly in decreasing the comprehensibility of the test; their use often raises questions like "what's the value of this test?", "what's real and what's fake?", and "can I trust that a passing test means it's working under real conditions?". These questions are often asked _whenever_ test doubles are used, but finding clear-cut answers to those questions in the face of partial mocking is often a challenge. Partial mocks can also lead to hard-to-maintain tests, in the event that one of an object's methods is changed to invoke another method which has been faked-out in some number of tests, the partial mock may begin *interacting with itself* in unexpected ways.
 
-There is a special sub-type of a partial mock, which is when the [[subject]] itself is partially mocked in a test. This exacerbates all of the aforementioned issues.
+## Contaminated test subjects
+
+There is a special sub-type of a partial mock, a which is when the [[subject]] itself is partially mocked in a test. This exacerbates all of the aforementioned issues. I call this a **contaminated test subject**, because the thing being evaluated by the test is also tainted by it, which might be expedient (for instance, specifying a depended-on function as part of the same code listing as the subject), but it will inevitably confuse the story the test is trying to tell to future readers. 
+
+One of the primary values of isolation testing is soliciting feedback on the design of the private API you're writing and, along with general usability, one things isolation tests can tell us is how to better organize our subject code in a way that's expressive and discoverable to others, and to insist on faking part of the thing being tested would be to ignore the feedback about fully and clearly separating the concerns being specified.
 
 ## Advice
 
