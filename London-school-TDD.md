@@ -2,7 +2,7 @@
 
 This school of TDD was derived from years of practice in the Extreme Programming community in London. It describes an entirely different approach to test-driven development from its predecessor, the more prevalent [[Detroit-school|Detroit-school TDD]]. Many of the concepts were first published (to my knowledge) in a [paper at XP 2000](http://www.ccs.neu.edu/research/demeter/related-work/extreme-programming/MockObjectsFinal.PDF). 
 
-I can't speak for the [GOOS](http://www.growing-object-oriented-software.com)'s authors, [Nat Pryce](http://www.natpryce.com) and [Steve Freeman](http://higherorderlogic.com), so this article and other descriptions of "London" TDD only represent my derivative iterations on the concepts and themes they first published in their book. Furthermore, so that I'm not putting too many words in their mouths, my approach to London-school testing will be documented in [[Discovery Testing]].
+I can't speak for the [GOOS](http://www.growing-object-oriented-software.com)'s authors, [Nat Pryce](http://www.natpryce.com) and [Steve Freeman](http://www.higherorderlogic.com), so this article and other descriptions of "London" TDD only represent my derivative iterations on the concepts and themes they first published in their book. Furthermore, so that I'm not putting too many words in their mouths, my approach to London-school testing will be documented in [[Discovery Testing]].
 
 ## What is it?
 
