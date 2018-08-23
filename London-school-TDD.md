@@ -28,7 +28,7 @@ The reason that London-school TDD can influence the design of the implementation
 
 A common criticism of London-school test suites is that the cost to refactor implementations of a unit is increased. 
 
-While unit types whose tests don't use [[test doubles|test double]] (like Value and Logic units) are no different to refactor than Detroit-school units, types with mocked-out dependencies (like Collaborator and Signaler) require significantly more effort to refactor significantly. In general, attempting to refactor the implementation without changing the test first 
+While unit types whose tests don't use [[test doubles|test double]] (like Value and Logic units) are no different to refactor than Detroit-school units, types with mocked-out dependencies (like Collaborator and Signaler) require significantly more effort to refactor significantly.
 
 Because many [[collaboration tests|Collaboration Test]] use [[test doubles|test double]] to specify the contract of a dependency, the cost of refactoring a design is sometimes dramatically increased (which is why [[Discovery Testing]] encourages targeted rewrites instead, with refactoring as an exceptional activity).
 
