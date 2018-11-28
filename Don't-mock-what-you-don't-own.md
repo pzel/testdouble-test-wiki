@@ -48,7 +48,7 @@ And then fake that wrapper instead. The above could be faked with [testdouble.js
 
 ``` js
 var get = td.function('.get')
-td.when('/my/path').thenCallback(null, 'some response!')
+td.when(get('/my/path')).thenCallback(null, 'some response!')
 
 // … the rest of the test
 ```
