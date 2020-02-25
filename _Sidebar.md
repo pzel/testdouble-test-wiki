@@ -29,7 +29,7 @@
   * [[Arrange Act Assert]]
   * [[Test Failure Analysis]]
   * [[Feedback Loop]]
-  * [[Necessary & Sufficient|/Necessary-%26-Sufficient]]
+  * [Necessary & Sufficient](https://github.com/testdouble/contributing-tests/wiki/Necessary-%26-Sufficient)
   * [[Realism Impulse]]
   * [[Testing Pyramid]]
   * [[Redundant Coverage]]
