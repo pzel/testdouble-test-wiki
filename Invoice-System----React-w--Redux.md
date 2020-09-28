@@ -12,12 +12,12 @@ Refactor note: We'd like to also look at starting to add testing beyond snapshot
 
 ### User Story 2
 
-Use the discount_percent in the payload to discount the line item. Show the previous amount, the new amount and the amount discounted.  Example below:
+Use the discount_percent in the payload to discount the line item. Show the previous amount, the new amount, and the amount discounted.  Example below:
 
 <pre>
-Name                | Description                              | Unit Price | Quanity | Discount | Subtotal
-Anti-Virus Software | Subscription services for virus software | $200 | 1 | 50% | $100 (was $200)
-
+Name                | Description                              | Unit Price | Quantity | Discount | Subtotal
+Anti-Virus Software | Subscription services for virus software | $200       | 1        |      50% | $100 (was $200)
+</pre>
 ![](https://gitlab.com/testdouble/accounts-receivable-react/uploads/5ea855ea29cf553527c54e211cfb9842/image.png)
 
 ### User Story 3
