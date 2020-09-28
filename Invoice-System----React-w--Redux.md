@@ -16,7 +16,7 @@ Use the discount_percent in the payload to discount the line item. Show the prev
 
 <pre>
 Name                | Description                              | Unit Price | Quantity | Discount | Subtotal
-Anti-Virus Software | Subscription services for virus software | $200       | 1        |      50% | $100 (was $200)
+Anti-Virus Software | Subscription services for virus software | $200       | 1        |      50% | <strike>$200</strike> $100
 </pre>
 ![](https://gitlab.com/testdouble/accounts-receivable-react/uploads/5ea855ea29cf553527c54e211cfb9842/image.png)
 
