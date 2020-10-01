@@ -22,4 +22,7 @@ Anti-Virus Software | Subscription services for virus software | $200       | 1 
 
 ### User Story 3
 
+Create a form to store out new invoices along with their line items.  (note we should add some type of product w/ price here to access for a drop down) 
+
 ### User Story 4
+
