@@ -6,9 +6,9 @@ Discovery Testing prescribes a recursive workflow for TDD, seeking to defining a
 
 1. Start by identifying an entry point and writing a [[collaboration test]] of it
 2. For each dependency the first collaboration test identifies:
-  1. if it needs to be broken down further, write another [[collaboration test]] for it (e.g. `GOTO 1`)
-  2. if its task is a straightforward data transformation, implement it as a pure-function [[leaf node]]
-  3. if its task requires interaction with a third-party, implement a [[wrapper object]]
+   1. if it needs to be broken down further, write another [[collaboration test]] for it (e.g. `GOTO 1`)
+   2. if its task is a straightforward data transformation, implement it as a pure-function [[leaf node]]
+   3. if its task requires interaction with a third-party, implement a [[wrapper object]]
 
 By recursing through the trees that emerge from following the above steps, most typical application development tasks can be accomplished.
 
