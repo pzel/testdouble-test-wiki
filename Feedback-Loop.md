@@ -1,6 +1,6 @@
 The term "feedback loop" describes the amount of time which elapses between someone doing something and learning whether it had the desired effect. Software developers often use the term as shorthand for "how long my tests take to run", but the concept can be applied to almost any oft-repeated process. 
 
-As it pertains to software, the feedback is normally represented by "it worked and I expected it to work", "it worked and I don't know why it worked", "it didn't work for a reason I understand", and "it didn't work for a reason I didn't understand. Typically, the feedback is needed in order to continue work (or, continue confidently that everything is as-expected). If the feedback received isn't what the developer expected, the duration of the last iteration of the feedback loop could be viewed as waste, as they'll need to step back and correct for the unexpected outcome.
+As it pertains to software, the feedback is normally represented by "it worked and I expected it to work", "it worked and I don't know why it worked", "it didn't work for a reason I understand", and "it didn't work for a reason I didn't understand". Typically, the feedback is needed in order to continue work (or, continue confidently that everything is as-expected). If the feedback received isn't what the developer expected, the duration of the last iteration of the feedback loop could be viewed as waste, as they'll need to step back and correct for the unexpected outcome.
 
 ## Minimizing feedback loops
 
