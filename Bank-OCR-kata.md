@@ -260,7 +260,7 @@ don't save any changes by mistake.
 => 490867715
 </pre>
 
-## Node.js File I/O Snippets
+## Node.js v16 File I/O Code Snippets
 
 Code samples for reading and writing files in Node.js to help accelerate your coding:
 
@@ -295,15 +295,15 @@ _By default, Node.js will read 64KB of data per chunk._
 
 Relevant docs:
 
-- createReadStream (func): https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options                                                          
-  * fs.ReadStream (class): https://nodejs.org/api/fs.html#fs_class_fs_readstream                                                                       
-  * stream.Readable (class): https://nodejs.org/api/stream.html#stream_class_stream_readable                                                           
-  * stream.Readable.pipe (method): https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options                                                                                                                                                                                   
-- createWriteStream (func): https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options                                                        
-  - fs.WriteStream (class): https://nodejs.org/api/fs.html#fs_class_fs_writestream                                                                     
-  - stream.Writable (class): https://nodejs.org/api/stream.html#stream_class_stream_writable                                                           
-- streams.pipeline (func): https://nodejs.org/api/stream.html#stream_stream_pipeline_source_transforms_destination_callback                            
-- steams.Transform constructor: https://github.com/nodejs/node/blob/1150cfe6ebf44541581e87682141905b6750439f/lib/internal/streams/transform.js#L81
+- fs.createReadStream (func): https://nodejs.org/docs/latest-v16.x/api/fs.html#fs_fs_createreadstream_path_options                                                          
+  * fs.ReadStream (class): https://nodejs.org/docs/latest-v16.x/api/fs.html#fs_class_fs_readstream                                                                       
+  * stream.Readable (class): https://nodejs.org/docs/latest-v16.x/api/stream.html#stream_class_stream_readable                                                           
+  * stream.Readable.pipe (method): https://nodejs.org/docs/latest-v16.x/api/stream.html#stream_readable_pipe_destination_options                                                                                                                                                                                   
+- fs.createWriteStream (func): https://nodejs.org/docs/latest-v16.x/api/fs.html#fs_fs_createwritestream_path_options                                                        
+  - fs.WriteStream (class): https://nodejs.org/docs/latest-v16.x/api/fs.html#fs_class_fs_writestream                                                                     
+  - stream.Writable (class): https://nodejs.org/docs/latest-v16.x/api/stream.html#stream_class_stream_writable                                                           
+- streams.pipeline (func): https://nodejs.org/docs/latest-v16.x/api/stream.html#stream_stream_pipeline_source_transforms_destination_callback                            
+- streams.Transform constructor: https://github.com/nodejs/node/blob/1150cfe6ebf44541581e87682141905b6750439f/lib/internal/streams/transform.js#L81
 
 ```javascript
 import { createReadStream, createWriteStream } from "fs";
