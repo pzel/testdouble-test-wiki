@@ -259,3 +259,92 @@ don't save any changes by mistake.
 
 => 490867715
 </pre>
+
+## Node.js File I/O Snippets
+
+Code samples for reading and writing files in Node.js to help accelerate your coding:
+
+### Example 1: Read whole file into memory
+
+Relevant docs:
+ - readFile (func): https://nodejs.org/api/fs.html#fs_fspromises_readfile_path_options
+ - writeFile (func): https://nodejs.org/api/fs.html#fs_fspromises_writefile_file_data_options
+
+```javascript
+import { readFile, writeFile } from "fs/promises";
+
+const inputFile = "path/to/infile";
+const outputFile = "path/to/outfile";
+
+async function main() {
+  // Async read contents of file into memory.
+  const fileContents = await readFile(inputFile, {
+    encoding: "utf8", // specifying an encoding returns the file contents as a string
+  });
+
+  const dataToSave = magicalDataTransformer(fileContents);
+
+  // Async write data to a file, replacing the file if it already exists.
+  await writeFile(outputFile, dataToSave, { encoding: "utf8" });
+}
+```
+
+### Example 2: Streaming I/O
+
+_By default, Node.js will read 64KB of data per chunk._
+
+Relevant docs:
+
+- createReadStream (func): https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options                                                          
+  * fs.ReadStream (class): https://nodejs.org/api/fs.html#fs_class_fs_readstream                                                                       
+  * stream.Readable (class): https://nodejs.org/api/stream.html#stream_class_stream_readable                                                           
+  * stream.Readable.pipe (method): https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options                                                                                                                                                                                   
+- createWriteStream (func): https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options                                                        
+  - fs.WriteStream (class): https://nodejs.org/api/fs.html#fs_class_fs_writestream                                                                     
+  - stream.Writable (class): https://nodejs.org/api/stream.html#stream_class_stream_writable                                                           
+- streams.pipeline (func): https://nodejs.org/api/stream.html#stream_stream_pipeline_source_transforms_destination_callback                            
+- steams.Transform constructor: https://github.com/nodejs/node/blob/1150cfe6ebf44541581e87682141905b6750439f/lib/internal/streams/transform.js#L81
+
+```javascript
+import { createReadStream, createWriteStream } from "fs";
+import { pipeline, Transform } from "stream";
+
+const inputFile = "path/to/infile";
+const outputFile = "path/to/outfile";
+
+const readStream = createReadStream(inputFile, { encoding: "utf8" });
+const writeStream = createWriteStream(outputFile, { encoding: "utf8" });
+
+const myTransformStream = new Transform({
+  transform(chunkBuffer, _encoding, callback) {
+    const chunkStr = chunkBuffer.toString("utf8");
+
+    chunkStr.split("\n").forEach((line) => {
+      // this.push(data) for the next Stream in the pipeline
+      this.push(line + "--line-transform--\n");
+    });
+
+    // NOTE: must call; callback(err, optionalMessage)
+    callback(null, "done with chunk\n");
+  },
+});
+
+// Manually pipe the streams
+
+readStream.pipe(myTransformStream).pipe(writeStream);
+
+writeStream.on("close", () => {
+  console.log("pipeline done");
+});
+
+// OR use the stream.pipeline() function
+
+pipeline(readStream, myTransformStream, writeStream, (err) => {
+  if (err) {
+    console.error("pipeline failed:", err);
+    process.exit(1);
+  } else {
+    console.log("pipeline success");
+  }
+});
+```
