@@ -21,7 +21,7 @@
   * [[One Good Test]]
   * [[Greeting Kata]]
   * [[Unusual Spending Kata]]
-  * [[Bank OCR kata|Bank OCR Kata in Cucumber]]
+  * [[Bank OCR Kata|Bank OCR Kata]]
   * [[Gilded Rose Kata]]
   * [[Code Retreat]]
 * Additional Concepts
