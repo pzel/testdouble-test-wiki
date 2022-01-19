@@ -11,7 +11,7 @@ This Kata was presented at XP2006 by EmmanuelGaillot and ChristopheThibaut.
 You work for a bank, which has recently purchased an ingenious machine to assist in reading letters and faxes sent in by branch offices. The machine scans the paper documents, and produces a file with a number of entries which each look like this:
 
 <pre>
-    _  _     _  _  _  _  _
+    _  _     _  _  _  _  _ 
   | _| _||_||_ |_   ||_||_|
   ||_  _|  | _||_|  ||_| _|
 </pre>
@@ -59,8 +59,8 @@ because the scanner has failed to pick up on one pipe or underscore
 for one of the figures. For example
 
 <pre>
-    _  _  _  _  _  _     _
-|_||_|| || ||_   |  |  ||_
+    _  _  _  _  _  _     _ 
+|_||_|| || ||_   |  |  ||_ 
   | _||_||_||_|  |  |  | _|
 </pre>
 
@@ -125,7 +125,7 @@ don't save any changes by mistake.
 |_||_||_||_||_||_||_||_||_|
 
 => 000000000
-
+                           
   |  |  |  |  |  |  |  |  |
   |  |  |  |  |  |  |  |  |
 
@@ -145,32 +145,32 @@ don't save any changes by mistake.
   |  |  |  |  |  |  |  |  |
 
 => 444444444
- _  _  _  _  _  _  _  _  _
-|_ |_ |_ |_ |_ |_ |_ |_ |_
+ _  _  _  _  _  _  _  _  _ 
+|_ |_ |_ |_ |_ |_ |_ |_ |_ 
  _| _| _| _| _| _| _| _| _|
 
 => 555555555
- _  _  _  _  _  _  _  _  _
-|_ |_ |_ |_ |_ |_ |_ |_ |_
+ _  _  _  _  _  _  _  _  _ 
+|_ |_ |_ |_ |_ |_ |_ |_ |_ 
 |_||_||_||_||_||_||_||_||_|
 
 => 666666666
- _  _  _  _  _  _  _  _  _
+ _  _  _  _  _  _  _  _  _ 
   |  |  |  |  |  |  |  |  |
   |  |  |  |  |  |  |  |  |
 
 => 777777777
- _  _  _  _  _  _  _  _  _
+ _  _  _  _  _  _  _  _  _ 
 |_||_||_||_||_||_||_||_||_|
 |_||_||_||_||_||_||_||_||_|
 
 => 888888888
- _  _  _  _  _  _  _  _  _
+ _  _  _  _  _  _  _  _  _ 
 |_||_||_||_||_||_||_||_||_|
  _| _| _| _| _| _| _| _| _|
 
 => 999999999
-    _  _     _  _  _  _  _
+    _  _     _  _  _  _  _ 
   | _| _||_||_ |_   ||_||_|
   ||_  _|  | _||_|  ||_| _|
 
@@ -179,19 +179,19 @@ don't save any changes by mistake.
 
 ### use case 3
 <pre>
- _  _  _  _  _  _  _  _
+ _  _  _  _  _  _  _  _.   
 | || || || || || || ||_   |
 |_||_||_||_||_||_||_| _|  |
 
 => 000000051
-    _  _  _  _  _  _     _
-|_||_|| || ||_   |  |  | _
+    _  _  _  _  _  _     _ 
+|_||_|| || ||_   |  |  | _ 
   | _||_||_||_|  |  |  | _|
 
 => 49006771? ILL
-    _  _     _  _  _  _  _
+    _  _     _  _  _  _  _ 
   | _| _||_| _ |_   ||_||_|
-  ||_  _|  | _||_|  ||_| _
+  ||_  _|  | _||_|  ||_| _ 
 
 => 1234?678? ILL
 </pre>
